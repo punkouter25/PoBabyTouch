@@ -492,10 +492,10 @@
                         
                         // Move circles apart to prevent sticking
                         float overlap = (float)((circle.Radius + otherCircle.Radius) - distance);
-                        circle.X -= overlap * 0.5f * nx;
-                        circle.Y -= overlap * 0.5f * ny;
-                        otherCircle.X += overlap * 0.5f * nx;
-                        otherCircle.Y += overlap * 0.5f * ny;
+                        circle.X -= (float)(overlap * 0.5 * nx);
+                        circle.Y -= (float)(overlap * 0.5 * ny);
+                        otherCircle.X += (float)(overlap * 0.5 * nx);
+                        otherCircle.Y += (float)(overlap * 0.5 * ny);
                     }
                 }
             }

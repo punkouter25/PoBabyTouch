@@ -657,3 +657,149 @@
 2025-04-16 12:51:05.123 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/css/game-animations.css - null null
 2025-04-16 12:51:05.141 -04:00 [INF] Sending file. Request path: '/css/game-animations.css'. Physical path: 'c:\Users\punko\OneDrive\Documents\PoBabyTouchGc\Client\PoBabyTouchGc.Client\wwwroot\css\game-animations.css'
 2025-04-16 12:51:05.146 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/css/game-animations.css - 200 null text/css 23.011ms
+2025-04-16 14:57:15.052 -04:00 [INF] Now listening on: http://localhost:5127
+2025-04-16 14:57:15.074 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-16 14:57:15.075 -04:00 [INF] Hosting environment: Development
+2025-04-16 14:57:15.076 -04:00 [INF] Content root path: C:\Users\punko\OneDrive\Documents\PoBabyTouchGc\Server\PoBabyTouchGc.Server
+2025-04-16 14:58:12.813 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/ - null null
+2025-04-16 14:58:12.821 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-04-16 14:58:12.837 -04:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-04-16 14:58:12.845 -04:00 [INF] The file /index.html was not modified
+2025-04-16 14:58:12.846 -04:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-04-16 14:58:12.852 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/index.html - 304 null text/html 39.6941ms
+2025-04-16 14:58:12.998 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-04-16 14:58:12.998 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/PoBabyTouchGc.Client.styles.css - null null
+2025-04-16 14:58:12.998 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/css/app.css - null null
+2025-04-16 14:58:13.002 -04:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-04-16 14:58:13.002 -04:00 [INF] The file /PoBabyTouchGc.Client.styles.css was not modified
+2025-04-16 14:58:13.005 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 6.9617ms
+2025-04-16 14:58:13.005 -04:00 [INF] The file /css/app.css was not modified
+2025-04-16 14:58:13.006 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/PoBabyTouchGc.Client.styles.css - 304 null text/css 7.871ms
+2025-04-16 14:58:13.011 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/css/app.css - 304 null text/css 13.1977ms
+2025-04-16 14:58:13.012 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/js/game.js - null null
+2025-04-16 14:58:13.028 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/_framework/blazor.boot.json - null null
+2025-04-16 14:58:13.034 -04:00 [INF] Sending file. Request path: '/js/game.js'. Physical path: 'C:\Users\punko\OneDrive\Documents\PoBabyTouchGc\Client\PoBabyTouchGc.Client\wwwroot\js\game.js'
+2025-04-16 14:58:13.034 -04:00 [INF] Sending file. Request path: '/_framework/blazor.boot.json'. Physical path: 'C:\Users\punko\OneDrive\Documents\PoBabyTouchGc\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json'
+2025-04-16 14:58:13.036 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/js/game.js - 200 null text/javascript 23.404ms
+2025-04-16 14:58:13.037 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/_framework/blazor.boot.json - 200 null application/json 9.0733ms
+2025-04-16 14:58:13.103 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/_framework/PoBabyTouchGc.Shared.8ymsrb6f9s.pdb - null null
+2025-04-16 14:58:13.103 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/_framework/PoBabyTouchGc.Client.0u9hwbw277.pdb - null null
+2025-04-16 14:58:13.111 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Shared.8ymsrb6f9s.pdb.gz'. Physical path: 'C:\Users\punko\OneDrive\Documents\PoBabyTouchGc\Client\PoBabyTouchGc.Client\obj\Debug\net9.0\compressed\n9qr01n65b-8ymsrb6f9s.gz'
+2025-04-16 14:58:13.112 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Client.0u9hwbw277.pdb.gz'. Physical path: 'C:\Users\punko\OneDrive\Documents\PoBabyTouchGc\Client\PoBabyTouchGc.Client\obj\Debug\net9.0\compressed\zwh1ayx5do-0u9hwbw277.gz'
+2025-04-16 14:58:13.113 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/_framework/PoBabyTouchGc.Shared.8ymsrb6f9s.pdb.gz - 200 7546 application/octet-stream 9.7806ms
+2025-04-16 14:58:13.113 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/_framework/PoBabyTouchGc.Client.0u9hwbw277.pdb.gz - 200 36242 application/octet-stream 9.8487ms
+2025-04-16 14:58:13.132 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/_framework/PoBabyTouchGc.Shared.f4hles9b2i.wasm - null null
+2025-04-16 14:58:13.135 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/_framework/PoBabyTouchGc.Client.j4n5azd06q.wasm - null null
+2025-04-16 14:58:13.135 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Shared.f4hles9b2i.wasm'. Physical path: 'C:\Users\punko\OneDrive\Documents\PoBabyTouchGc\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\PoBabyTouchGc.Shared.f4hles9b2i.wasm'
+2025-04-16 14:58:13.137 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/_framework/PoBabyTouchGc.Shared.f4hles9b2i.wasm - 200 null application/wasm 4.7981ms
+2025-04-16 14:58:13.137 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Client.j4n5azd06q.wasm'. Physical path: 'C:\Users\punko\OneDrive\Documents\PoBabyTouchGc\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\PoBabyTouchGc.Client.j4n5azd06q.wasm'
+2025-04-16 14:58:13.139 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/_framework/PoBabyTouchGc.Client.j4n5azd06q.wasm - 200 null application/wasm 4.7343ms
+2025-04-16 14:58:14.774 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/matt/sound4.mp3 - null null
+2025-04-16 14:58:14.776 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/matt/sound3.mp3 - null null
+2025-04-16 14:58:14.776 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/matt/sound2.mp3 - null null
+2025-04-16 14:58:14.776 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/matt/sound5.mp3 - null null
+2025-04-16 14:58:14.786 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/matt/sound5.mp3 - 404 0 null 9.875ms
+2025-04-16 14:58:14.787 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/matt/sound5.mp3, Response status code: 404
+2025-04-16 14:58:14.781 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/matt/sound3.mp3 - 404 0 null 5.5145ms
+2025-04-16 14:58:14.788 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/matt/sound3.mp3, Response status code: 404
+2025-04-16 14:58:14.790 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/nick/sound2.mp3 - null null
+2025-04-16 14:58:14.777 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/matt/sound1.mp3 - null null
+2025-04-16 14:58:14.777 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/nick/sound1.mp3 - null null
+2025-04-16 14:58:14.783 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/matt/sound4.mp3 - 404 0 null 8.5689ms
+2025-04-16 14:58:14.784 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/matt/sound2.mp3 - 404 0 null 8.4498ms
+2025-04-16 14:58:14.793 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/nick/sound5.mp3 - null null
+2025-04-16 14:58:14.794 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/nick/sound2.mp3 - 404 0 null 4.3749ms
+2025-04-16 14:58:14.810 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/nick/sound2.mp3, Response status code: 404
+2025-04-16 14:58:14.796 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/nick/sound1.mp3 - 404 0 null 19.5757ms
+2025-04-16 14:58:14.813 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/nick/sound1.mp3, Response status code: 404
+2025-04-16 14:58:14.813 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/kim/sound3.mp3 - null null
+2025-04-16 14:58:14.801 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/nick/sound5.mp3 - 404 0 null 8.9791ms
+2025-04-16 14:58:14.822 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/nick/sound5.mp3, Response status code: 404
+2025-04-16 14:58:14.822 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/kim/sound4.mp3 - null null
+2025-04-16 14:58:14.826 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/kim/sound4.mp3 - 404 0 null 3.9264ms
+2025-04-16 14:58:14.831 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/kim/sound4.mp3, Response status code: 404
+2025-04-16 14:58:14.819 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/kim/sound3.mp3 - 404 0 null 5.6144ms
+2025-04-16 14:58:14.795 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/matt/sound1.mp3 - 404 0 null 17.965ms
+2025-04-16 14:58:14.812 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/kim/sound1.mp3 - null null
+2025-04-16 14:58:14.798 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/matt/sound4.mp3, Response status code: 404
+2025-04-16 14:58:14.800 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/matt/sound2.mp3, Response status code: 404
+2025-04-16 14:58:14.835 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/kim/sound3.mp3, Response status code: 404
+2025-04-16 14:58:14.836 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/matt/sound1.mp3, Response status code: 404
+2025-04-16 14:58:14.838 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/kim/sound1.mp3 - 404 0 null 26.2328ms
+2025-04-16 14:58:14.839 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/nick/sound3.mp3 - null null
+2025-04-16 14:58:14.839 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/nick/sound4.mp3 - null null
+2025-04-16 14:58:14.840 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/kim/sound5.mp3 - null null
+2025-04-16 14:58:14.841 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/kim/sound2.mp3 - null null
+2025-04-16 14:58:14.842 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/kim/sound1.mp3, Response status code: 404
+2025-04-16 14:58:14.843 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/nick/sound3.mp3 - 404 0 null 4.8545ms
+2025-04-16 14:58:14.844 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/nick/sound4.mp3 - 404 0 null 4.869ms
+2025-04-16 14:58:14.846 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/kim/sound5.mp3 - 404 0 null 5.4907ms
+2025-04-16 14:58:14.847 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/kim/sound2.mp3 - 404 0 null 5.6804ms
+2025-04-16 14:58:14.849 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/nick/sound3.mp3, Response status code: 404
+2025-04-16 14:58:14.851 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/nick/sound4.mp3, Response status code: 404
+2025-04-16 14:58:14.853 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/kim/sound5.mp3, Response status code: 404
+2025-04-16 14:58:14.855 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/kim/sound2.mp3, Response status code: 404
+2025-04-16 14:58:18.003 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/_framework/dotnet.js.map - null null
+2025-04-16 14:58:18.003 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/_framework/dotnet.runtime.js.map - null null
+2025-04-16 14:58:18.007 -04:00 [INF] Sending file. Request path: '/_framework/dotnet.js.map'. Physical path: 'C:\Users\punko\OneDrive\Documents\PoBabyTouchGc\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\dotnet.js.map'
+2025-04-16 14:58:18.008 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/_framework/dotnet.js.map - 200 null text/plain 5.2344ms
+2025-04-16 14:58:18.022 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/lib/bootstrap/dist/css/bootstrap.min.css.map - null null
+2025-04-16 14:58:18.027 -04:00 [INF] Sending file. Request path: '/_framework/dotnet.runtime.js.map'. Physical path: 'C:\Users\punko\OneDrive\Documents\PoBabyTouchGc\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\dotnet.runtime.js.map'
+2025-04-16 14:58:18.028 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/_framework/dotnet.runtime.js.map - 200 null text/plain 24.7437ms
+2025-04-16 14:58:18.035 -04:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css.map'. Physical path: 'C:\Users\punko\OneDrive\Documents\PoBabyTouchGc\Client\PoBabyTouchGc.Client\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map'
+2025-04-16 14:58:18.036 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/lib/bootstrap/dist/css/bootstrap.min.css.map - 200 null text/plain 13.4475ms
+2025-04-16 15:03:25.604 -04:00 [INF] Application is shutting down...
+2025-04-16 15:03:33.445 -04:00 [INF] Now listening on: http://localhost:5127
+2025-04-16 15:03:33.469 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-16 15:03:33.469 -04:00 [INF] Hosting environment: Development
+2025-04-16 15:03:33.472 -04:00 [INF] Content root path: C:\Users\punko\OneDrive\Documents\PoBabyTouchGc\Server\PoBabyTouchGc.Server
+2025-04-16 15:03:36.135 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/matt/sound4.mp3 - null null
+2025-04-16 15:03:36.135 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/matt/sound5.mp3 - null null
+2025-04-16 15:03:36.135 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/matt/sound3.mp3 - null null
+2025-04-16 15:03:36.135 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/nick/sound1.mp3 - null null
+2025-04-16 15:03:36.135 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/matt/sound2.mp3 - null null
+2025-04-16 15:03:36.135 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/matt/sound1.mp3 - null null
+2025-04-16 15:03:36.147 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-04-16 15:03:36.160 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/matt/sound4.mp3 - 404 0 null 27.3451ms
+2025-04-16 15:03:36.160 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/matt/sound5.mp3 - 404 0 null 27.397ms
+2025-04-16 15:03:36.160 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/matt/sound1.mp3 - 404 0 null 27.3639ms
+2025-04-16 15:03:36.160 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/nick/sound1.mp3 - 404 0 null 27.4029ms
+2025-04-16 15:03:36.161 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/matt/sound3.mp3 - 404 0 null 27.3476ms
+2025-04-16 15:03:36.162 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/matt/sound2.mp3 - 404 0 null 29.1737ms
+2025-04-16 15:03:36.171 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/matt/sound1.mp3, Response status code: 404
+2025-04-16 15:03:36.171 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/matt/sound4.mp3, Response status code: 404
+2025-04-16 15:03:36.171 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/matt/sound5.mp3, Response status code: 404
+2025-04-16 15:03:36.172 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/nick/sound1.mp3, Response status code: 404
+2025-04-16 15:03:36.173 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/matt/sound3.mp3, Response status code: 404
+2025-04-16 15:03:36.174 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/matt/sound2.mp3, Response status code: 404
+2025-04-16 15:03:36.175 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/nick/sound4.mp3 - null null
+2025-04-16 15:03:36.176 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/nick/sound2.mp3 - null null
+2025-04-16 15:03:36.176 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/_framework/blazor.boot.json - null null
+2025-04-16 15:03:36.177 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/nick/sound5.mp3 - null null
+2025-04-16 15:03:36.178 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/kim/sound1.mp3 - null null
+2025-04-16 15:03:36.179 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/nick/sound3.mp3 - null null
+2025-04-16 15:03:36.181 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/nick/sound2.mp3 - 404 0 null 5.428ms
+2025-04-16 15:03:36.181 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/nick/sound4.mp3 - 404 0 null 5.9146ms
+2025-04-16 15:03:36.183 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/nick/sound5.mp3 - 404 0 null 5.8198ms
+2025-04-16 15:03:36.185 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/kim/sound1.mp3 - 404 0 null 6.8063ms
+2025-04-16 15:03:36.186 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/nick/sound3.mp3 - 404 0 null 7.0217ms
+2025-04-16 15:03:36.189 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/nick/sound2.mp3, Response status code: 404
+2025-04-16 15:03:36.191 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/nick/sound4.mp3, Response status code: 404
+2025-04-16 15:03:36.193 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/nick/sound5.mp3, Response status code: 404
+2025-04-16 15:03:36.194 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/kim/sound1.mp3, Response status code: 404
+2025-04-16 15:03:36.196 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/nick/sound3.mp3, Response status code: 404
+2025-04-16 15:03:36.197 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/kim/sound2.mp3 - null null
+2025-04-16 15:03:36.198 -04:00 [INF] Sending file. Request path: '/_framework/blazor.boot.json'. Physical path: 'C:\Users\punko\OneDrive\Documents\PoBabyTouchGc\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json'
+2025-04-16 15:03:36.198 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/kim/sound3.mp3 - null null
+2025-04-16 15:03:36.199 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/kim/sound4.mp3 - null null
+2025-04-16 15:03:36.200 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5127/sounds/kim/sound5.mp3 - null null
+2025-04-16 15:03:36.201 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/kim/sound2.mp3 - 404 0 null 4.443ms
+2025-04-16 15:03:36.206 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/kim/sound2.mp3, Response status code: 404
+2025-04-16 15:03:36.203 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/kim/sound3.mp3 - 404 0 null 4.9793ms
+2025-04-16 15:03:36.204 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/kim/sound4.mp3 - 404 0 null 4.8688ms
+2025-04-16 15:03:36.204 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/sounds/kim/sound5.mp3 - 404 0 null 4.775ms
+2025-04-16 15:03:36.202 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5127/_framework/blazor.boot.json - 200 null application/json 25.5415ms
+2025-04-16 15:03:36.209 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/kim/sound3.mp3, Response status code: 404
+2025-04-16 15:03:36.210 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/kim/sound4.mp3, Response status code: 404
+2025-04-16 15:03:36.211 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5127/sounds/kim/sound5.mp3, Response status code: 404
+2025-04-16 15:04:17.270 -04:00 [INF] Application is shutting down...
