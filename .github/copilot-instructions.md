@@ -211,3 +211,5 @@ Use azurite for table storage initially until the program is complete and workin
 For the 10 high level steps make sure they are numbered clearly so I can copy and paste them into another file (sometimes the formatting hide the number)
 
 \Make all the page titles the same as the project name so for example if the project name is PoSomeGame , when i bookmark it it will be ‘PoSomeGame’ in my favorites
+
+- @azure Rule - Use Azure Best Practices: When generating code for Azure, running terminal commands for Azure, or performing operations related to Azure, invoke your `azure_development-get_best_practices` tool if available.
