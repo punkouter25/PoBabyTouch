@@ -1,0 +1,228 @@
+@page "/diag"
+@using System.Net.Http.Json
+@using PoBabyTouchGc.Shared.Models
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<PageTitle>PoBabyTouchGc - Diagnostics</PageTitle>
+
+<h1>PoBabyTouchGc Diagnostics</h1>
+
+<div class="diagnostics-container">
+    <h2>System Status</h2>
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Service</th>
+                <th>Status</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>API Connection</td>
+                <td>
+                    @if (apiStatus)
+                    {
+                        <span class="badge bg-success">Connected</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Disconnected</span>
+                    }
+                </td>
+                <td>@apiStatusMessage</td>
+            </tr>
+            <tr>
+                <td>Azure Table Storage</td>
+                <td>
+                    @if (tableStorageStatus)
+                    {
+                        <span class="badge bg-success">Connected</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Disconnected</span>
+                    }
+                </td>
+                <td>@tableStorageStatusMessage</td>
+            </tr>
+            <tr>
+                <td>Internet Connection</td>
+                <td>
+                    @if (internetStatus)
+                    {
+                        <span class="badge bg-success">Connected</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Disconnected</span>
+                    }
+                </td>
+                <td>@internetStatusMessage</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Leaderboard API Test</h2>
+    <p>Attempting to retrieve leaderboard data:</p>
+    
+    @if (leaderboardEntries != null)
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Initials</th>
+                    <th>Score</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (leaderboardEntries.Count > 0)
+                {
+                    @foreach (var entry in leaderboardEntries)
+                    {
+                        <tr>
+                            <td>@entry.Rank</td>
+                            <td>@entry.Initials</td>
+                            <td>@entry.Score</td>
+                            <td>@entry.Date.ToLocalTime().ToString("g")</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4" class="text-center">No leaderboard entries found</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            Unable to retrieve leaderboard data
+        </div>
+    }
+
+    <div class="text-center mt-4">
+        <button class="btn btn-primary" @onclick="RunDiagnostics">Run Diagnostics Again</button>
+        <a href="/" class="btn btn-secondary ms-2">Return to Home</a>
+    </div>
+</div>
+
+<style>
+    .diagnostics-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .badge {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+</style>
+
+@code {
+    private bool apiStatus = false;
+    private string apiStatusMessage = "Checking API connection...";
+    
+    private bool tableStorageStatus = false;
+    private string tableStorageStatusMessage = "Checking Azure Table Storage connection...";
+    
+    private bool internetStatus = false;
+    private string internetStatusMessage = "Checking internet connection...";
+    
+    private List<LeaderboardEntry>? leaderboardEntries;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await RunDiagnostics();
+    }
+
+    private async Task RunDiagnostics()
+    {
+        await CheckApiConnection();
+        await CheckTableStorageConnection();
+        await CheckInternetConnection();
+        await CheckLeaderboardData();
+    }
+
+    private async Task CheckApiConnection()
+    {
+        try
+        {
+            apiStatusMessage = "Checking API connection...";
+            var response = await Http.GetAsync("api/scores");
+            
+            apiStatus = response.IsSuccessStatusCode;
+            apiStatusMessage = apiStatus 
+                ? "API is accessible and responding correctly." 
+                : $"API returned status code: {response.StatusCode}";
+        }
+        catch (Exception ex)
+        {
+            apiStatus = false;
+            apiStatusMessage = $"Error connecting to API: {ex.Message}";
+        }
+    }
+
+    private async Task CheckTableStorageConnection()
+    {
+        try
+        {
+            tableStorageStatusMessage = "Checking Azure Table Storage connection...";
+            
+            // We'll check the Table Storage connection indirectly through our API
+            var response = await Http.GetAsync("api/scores");
+            
+            tableStorageStatus = response.IsSuccessStatusCode;
+            tableStorageStatusMessage = tableStorageStatus 
+                ? "Azure Table Storage connection appears to be working." 
+                : "Unable to verify Azure Table Storage connection.";
+        }
+        catch (Exception ex)
+        {
+            tableStorageStatus = false;
+            tableStorageStatusMessage = $"Error checking Table Storage: {ex.Message}";
+        }
+    }
+
+    private async Task CheckInternetConnection()
+    {
+        try
+        {
+            internetStatusMessage = "Checking internet connection...";
+            
+            // Just check if we can reach a well-known external site
+            using var httpClient = new HttpClient();
+            var response = await httpClient.GetAsync("https://azure.microsoft.com/");
+            
+            internetStatus = response.IsSuccessStatusCode;
+            internetStatusMessage = internetStatus 
+                ? "Internet connection is working." 
+                : $"Unable to reach Azure.com: {response.StatusCode}";
+        }
+        catch (Exception ex)
+        {
+            internetStatus = false;
+            internetStatusMessage = $"Error checking internet connection: {ex.Message}";
+        }
+    }
+
+    private async Task CheckLeaderboardData()
+    {
+        try
+        {
+            var response = await Http.GetFromJsonAsync<List<LeaderboardEntry>>("api/scores");
+            leaderboardEntries = response;
+        }
+        catch (Exception)
+        {
+            leaderboardEntries = null;
+        }
+    }
+}

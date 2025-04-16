@@ -1,0 +1,641 @@
+@page "/game"
+@using System.Net.Http.Json
+@using System.Timers
+@using PoBabyTouchGc.Shared.Models
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@inject HttpClient Http
+@implements IDisposable
+
+<PageTitle>PoBabyTouchGc</PageTitle>
+
+<div class="game-container @(isGameOver ? "game-over" : "")">
+    <div class="game-header">
+        <div class="score-display">Score: @score</div>
+        <div class="timer-display">Time: @timeRemaining</div>
+    </div>
+    
+    <div class="game-area" @ref="gameAreaRef" @onclick="HandleBackgroundClick">
+        @foreach (var circle in circles)
+        {
+            <div class="game-circle @circle.PersonClass"
+                 style="left: @(circle.X)px; top: @(circle.Y)px; 
+                        width: @(circle.Radius * 2)px; height: @(circle.Radius * 2)px;
+                        opacity: @(circle.IsVisible ? "1" : "0");"
+                 @onclick="@(e => HandleCircleClick(e, circle))"
+                 @onclick:stopPropagation="true"
+                 @key="circle.Id">
+            </div>
+        }
+    </div>
+
+    @if (isGameStarted && !isGameOver)
+    {
+        <button class="pause-button" @onclick="TogglePause">
+            @(isPaused ? "Resume" : "Pause")
+        </button>
+    }
+    
+    @if (!isGameStarted)
+    {
+        <div class="start-overlay">
+            <h2>PoBabyTouch</h2>
+            <p>Tap the circles as quickly as you can to score points!</p>
+            <button class="start-button" @onclick="StartGame">Start Game</button>
+        </div>
+    }
+    
+    @if (isGameOver)
+    {
+        <div class="game-over-overlay">
+            <h2>Game Over!</h2>
+            <p>Your final score: @score</p>
+            <button class="restart-button" @onclick="RestartGame">Play Again</button>
+            <button class="home-button" @onclick="GoToHome">Main Menu</button>
+        </div>
+    }
+
+    @if (showHighScoreModal)
+    {
+        <div class="high-score-modal">
+            <div class="high-score-content">
+                <h2>New High Score!</h2>
+                <p>Your score: @score</p>
+                <p>Enter your initials (3 letters):</p>
+                <input type="text" maxlength="3" @bind="playerInitials" @onkeyup="ValidateInitials" />
+                <div class="button-group">
+                    <button class="submit-button" @onclick="SubmitHighScore" disabled="@(!isValidInitials)">Submit</button>
+                    <button class="cancel-button" @onclick="CancelHighScore">Cancel</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .game-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background-color: #f0f8ff;
+        overflow: hidden;
+        position: relative;
+        touch-action: manipulation;
+    }
+    
+    .game-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: #3a86ff;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        z-index: 10;
+    }
+    
+    .game-area {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        background-color: #f0f8ff;
+    }
+    
+    .game-circle {
+        position: absolute;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.2s;
+        cursor: pointer;
+    }
+    
+    .matt-circle {
+        background-color: #ff6b6b;
+    }
+    
+    .nick-circle {
+        background-color: #52b788;
+    }
+    
+    .kim-circle {
+        background-color: #4cc9f0;
+    }
+    
+    .start-overlay, .game-over-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        z-index: 100;
+    }
+    
+    .start-button, .restart-button, .home-button, .pause-button {
+        background-color: #3a86ff;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        padding: 15px 30px;
+        margin: 10px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.2s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .start-button:hover, .restart-button:hover, .home-button:hover, .pause-button:hover {
+        transform: scale(1.05);
+        background-color: #2667cc;
+    }
+    
+    .pause-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 50;
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+    
+    .high-score-modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 200;
+    }
+    
+    .high-score-content {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        text-align: center;
+        width: 80%;
+        max-width: 400px;
+    }
+    
+    .high-score-content h2 {
+        color: #3a86ff;
+        margin-bottom: 20px;
+    }
+    
+    .high-score-content input {
+        width: 120px;
+        padding: 10px;
+        font-size: 24px;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 20px 0;
+        border: 2px solid #3a86ff;
+        border-radius: 5px;
+    }
+    
+    .button-group {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .submit-button, .cancel-button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    
+    .submit-button {
+        background-color: #3a86ff;
+        color: white;
+    }
+    
+    .submit-button:disabled {
+        background-color: #a6c8ff;
+        cursor: not-allowed;
+    }
+    
+    .cancel-button {
+        background-color: #e5e5e5;
+        color: #333;
+    }
+    
+    .submit-button:hover:not(:disabled) {
+        background-color: #2667cc;
+    }
+    
+    .cancel-button:hover {
+        background-color: #d1d1d1;
+    }
+</style>
+
+@code {
+    private ElementReference gameAreaRef;
+    private Timer? gameTimer;
+    private Timer? physicsFpsTimer;
+    private Random random = new Random();
+    private bool isGameStarted = false;
+    private bool isGameOver = false;
+    private bool isPaused = false;
+    private int score = 0;
+    private int timeRemaining = 20;
+    private List<GameCircle> circles = new List<GameCircle>();
+    private int gameAreaWidth = 0;
+    private int gameAreaHeight = 0;
+    private bool showHighScoreModal = false;
+    private string playerInitials = "";
+    private bool isValidInitials = false;
+    
+    // Constants
+    private const int TotalCircles = 7;
+    private const int CircleRadiusPercent = 5; // % of screen width
+    private const int CircleReappearDelayMs = 800;
+    private const int PhysicsFps = 60;
+    private const float BaseSpeed = 2.0f;
+    private const float SpeedIncreaseFactor = 1.5f;
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Initialize game area dimensions
+            var dimensions = await JSRuntime.InvokeAsync<int[]>("getElementDimensions", gameAreaRef);
+            if (dimensions.Length >= 2)
+            {
+                gameAreaWidth = dimensions[0];
+                gameAreaHeight = dimensions[1];
+                
+                // Initialize circle positions
+                InitializeCircles();
+                
+                // Set up physics timer
+                physicsFpsTimer = new Timer(1000.0 / PhysicsFps);
+                physicsFpsTimer.Elapsed += UpdatePhysics;
+                physicsFpsTimer.AutoReset = true;
+            }
+        }
+    }
+    
+    private void InitializeCircles()
+    {
+        circles.Clear();
+        
+        // Calculate circle radius based on screen width
+        int circleRadius = (int)(gameAreaWidth * CircleRadiusPercent / 100);
+        
+        for (int i = 0; i < TotalCircles; i++)
+        {
+            // Determine which person's circle to create
+            // Matt, Nick, and Kim should be evenly distributed
+            string person = (i % 3) switch
+            {
+                0 => "matt",
+                1 => "nick",
+                2 => "kim",
+                _ => "matt"
+            };
+            
+            string personClass = $"{person}-circle";
+            
+            var newCircle = new GameCircle
+            {
+                Id = Guid.NewGuid(),
+                X = random.Next(circleRadius, gameAreaWidth - circleRadius),
+                Y = random.Next(circleRadius, gameAreaHeight - circleRadius),
+                Radius = circleRadius,
+                IsVisible = true,
+                Person = person,
+                PersonClass = personClass,
+                VelocityX = (float)(random.NextDouble() * 2 - 1) * BaseSpeed,
+                VelocityY = (float)(random.NextDouble() * 2 - 1) * BaseSpeed
+            };
+            
+            // Ensure no overlap with existing circles
+            while (circles.Any(c => IsCircleOverlapping(newCircle, c)))
+            {
+                newCircle.X = random.Next(circleRadius, gameAreaWidth - circleRadius);
+                newCircle.Y = random.Next(circleRadius, gameAreaHeight - circleRadius);
+            }
+            
+            circles.Add(newCircle);
+        }
+    }
+    
+    private bool IsCircleOverlapping(GameCircle circle1, GameCircle circle2)
+    {
+        if (!circle1.IsVisible || !circle2.IsVisible)
+            return false;
+            
+        double dx = circle1.X - circle2.X;
+        double dy = circle1.Y - circle2.Y;
+        double distance = Math.Sqrt(dx * dx + dy * dy);
+        
+        return distance < (circle1.Radius + circle2.Radius);
+    }
+    
+    private void StartGame()
+    {
+        if (gameAreaWidth == 0 || gameAreaHeight == 0)
+            return;
+            
+        isGameStarted = true;
+        isGameOver = false;
+        isPaused = false;
+        score = 0;
+        timeRemaining = 20;
+        
+        InitializeCircles();
+        
+        physicsFpsTimer?.Start();
+        
+        gameTimer = new Timer(1000);
+        gameTimer.Elapsed += GameTimerTick;
+        gameTimer.AutoReset = true;
+        gameTimer.Start();
+    }
+    
+    private void GameTimerTick(object? sender, ElapsedEventArgs e)
+    {
+        if (isPaused)
+            return;
+            
+        InvokeAsync(() =>
+        {
+            timeRemaining--;
+            
+            if (timeRemaining <= 0)
+            {
+                EndGame();
+            }
+            
+            StateHasChanged();
+        });
+    }
+    
+    private void EndGame()
+    {
+        gameTimer?.Stop();
+        physicsFpsTimer?.Stop();
+        
+        isGameOver = true;
+        
+        // TODO: Check if score is high enough for leaderboard and show high score modal
+        // For now, always show the high score modal for testing
+        showHighScoreModal = true;
+    }
+    
+    private void RestartGame()
+    {
+        isGameOver = false;
+        showHighScoreModal = false;
+        playerInitials = "";
+        StartGame();
+    }
+    
+    private void GoToHome()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+    
+    private void TogglePause()
+    {
+        isPaused = !isPaused;
+    }
+    
+    private void UpdatePhysics(object? sender, ElapsedEventArgs e)
+    {
+        if (!isGameStarted || isGameOver || isPaused)
+            return;
+            
+        InvokeAsync(() =>
+        {
+            // Calculate current speed multiplier based on remaining time
+            // The speed increases as time decreases
+            float speedMultiplier = 1.0f + (20 - timeRemaining) / 20.0f * (SpeedIncreaseFactor - 1.0f);
+            
+            foreach (var circle in circles.Where(c => c.IsVisible))
+            {
+                // Update position based on velocity
+                circle.X += circle.VelocityX * speedMultiplier;
+                circle.Y += circle.VelocityY * speedMultiplier;
+                
+                // Boundary collision detection and response
+                if (circle.X - circle.Radius < 0)
+                {
+                    circle.X = circle.Radius;
+                    circle.VelocityX = Math.Abs(circle.VelocityX);
+                }
+                else if (circle.X + circle.Radius > gameAreaWidth)
+                {
+                    circle.X = gameAreaWidth - circle.Radius;
+                    circle.VelocityX = -Math.Abs(circle.VelocityX);
+                }
+                
+                if (circle.Y - circle.Radius < 0)
+                {
+                    circle.Y = circle.Radius;
+                    circle.VelocityY = Math.Abs(circle.VelocityY);
+                }
+                else if (circle.Y + circle.Radius > gameAreaHeight)
+                {
+                    circle.Y = gameAreaHeight - circle.Radius;
+                    circle.VelocityY = -Math.Abs(circle.VelocityY);
+                }
+                
+                // Circle-to-circle collision detection and response
+                foreach (var otherCircle in circles.Where(c => c.IsVisible && c.Id != circle.Id))
+                {
+                    if (IsCircleOverlapping(circle, otherCircle))
+                    {
+                        // Calculate collision response
+                        double dx = otherCircle.X - circle.X;
+                        double dy = otherCircle.Y - circle.Y;
+                        double distance = Math.Sqrt(dx * dx + dy * dy);
+                        
+                        // Normalized collision vector
+                        double nx = dx / distance;
+                        double ny = dy / distance;
+                        
+                        // Calculate relative velocity
+                        double vx = circle.VelocityX - otherCircle.VelocityX;
+                        double vy = circle.VelocityY - otherCircle.VelocityY;
+                        
+                        // Calculate relative velocity along collision normal
+                        double velocityAlongNormal = vx * nx + vy * ny;
+                        
+                        // Only resolve if circles are moving towards each other
+                        if (velocityAlongNormal > 0)
+                            continue;
+                            
+                        // Simple elastic collision response
+                        double bounce = 1.0; // Elastic coefficient
+                        double impulse = -(1 + bounce) * velocityAlongNormal;
+                        
+                        // Apply impulse equally to both circles
+                        circle.VelocityX -= (float)(impulse * nx);
+                        circle.VelocityY -= (float)(impulse * ny);
+                        otherCircle.VelocityX += (float)(impulse * nx);
+                        otherCircle.VelocityY += (float)(impulse * ny);
+                        
+                        // Move circles apart to prevent sticking
+                        float overlap = (float)((circle.Radius + otherCircle.Radius) - distance);
+                        circle.X -= overlap * 0.5f * nx;
+                        circle.Y -= overlap * 0.5f * ny;
+                        otherCircle.X += overlap * 0.5f * nx;
+                        otherCircle.Y += overlap * 0.5f * ny;
+                    }
+                }
+            }
+            
+            StateHasChanged();
+        });
+    }
+    
+    private async Task HandleCircleClick(MouseEventArgs e, GameCircle circle)
+    {
+        if (!isGameStarted || isGameOver || isPaused || !circle.IsVisible)
+            return;
+            
+        // Increment score
+        score++;
+        
+        // Hide the circle
+        circle.IsVisible = false;
+        
+        // Play sound effect based on person
+        await JSRuntime.InvokeVoidAsync("playSound", circle.Person);
+        
+        // Schedule circle to reappear after delay
+        _ = Task.Run(async () =>
+        {
+            await Task.Delay(CircleReappearDelayMs);
+            
+            await InvokeAsync(() =>
+            {
+                if (isGameStarted && !isGameOver)
+                {
+                    // Find a new non-overlapping position
+                    bool validPosition = false;
+                    int attempts = 0;
+                    int maxAttempts = 50;
+                    
+                    while (!validPosition && attempts < maxAttempts)
+                    {
+                        attempts++;
+                        
+                        circle.X = random.Next(circle.Radius, gameAreaWidth - circle.Radius);
+                        circle.Y = random.Next(circle.Radius, gameAreaHeight - circle.Radius);
+                        
+                        // Check for overlaps
+                        validPosition = !circles.Any(c => c.IsVisible && c.Id != circle.Id && IsCircleOverlapping(circle, c));
+                    }
+                    
+                    // Change velocity to make movement varied
+                    circle.VelocityX = (float)(random.NextDouble() * 2 - 1) * BaseSpeed;
+                    circle.VelocityY = (float)(random.NextDouble() * 2 - 1) * BaseSpeed;
+                    
+                    // Make circle visible again
+                    circle.IsVisible = true;
+                    StateHasChanged();
+                }
+            });
+        });
+    }
+    
+    private void HandleBackgroundClick()
+    {
+        if (!isGameStarted && !isGameOver)
+            StartGame();
+    }
+    
+    private void ValidateInitials()
+    {
+        // Ensure initials are 3 alpha characters
+        playerInitials = new string(playerInitials.ToUpper().Where(char.IsLetter).ToArray());
+        
+        if (playerInitials.Length > 3)
+            playerInitials = playerInitials.Substring(0, 3);
+            
+        isValidInitials = playerInitials.Length == 3;
+    }
+    
+    private async Task SubmitHighScore()
+    {
+        if (!isValidInitials)
+            return;
+            
+        try
+        {
+            // Create score submission object
+            var scoreSubmission = new ScoreSubmission
+            {
+                Initials = playerInitials,
+                Score = score
+            };
+            
+            // Submit score to leaderboard API
+            var response = await Http.PostAsJsonAsync("api/scores", scoreSubmission);
+            
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine($"Successfully submitted high score: {score} for {playerInitials}");
+                showHighScoreModal = false;
+                NavigationManager.NavigateTo("/leader");
+            }
+            else
+            {
+                Console.Error.WriteLine($"Error submitting high score: {response.StatusCode}");
+                // Show error message to user
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Error submitting high score: {ex.Message}");
+            // Show error message to user
+        }
+    }
+    
+    private void CancelHighScore()
+    {
+        showHighScoreModal = false;
+        isGameOver = true;
+    }
+    
+    public void Dispose()
+    {
+        gameTimer?.Dispose();
+        physicsFpsTimer?.Dispose();
+    }
+    
+    private class GameCircle
+    {
+        public Guid Id { get; set; }
+        public float X { get; set; }
+        public float Y { get; set; }
+        public int Radius { get; set; }
+        public bool IsVisible { get; set; }
+        public string Person { get; set; } = "";
+        public string PersonClass { get; set; } = "";
+        public float VelocityX { get; set; }
+        public float VelocityY { get; set; }
+    }
+    
+    private class ScoreSubmission
+    {
+        public string Initials { get; set; } = "";
+        public int Score { get; set; }
+    }
+}
