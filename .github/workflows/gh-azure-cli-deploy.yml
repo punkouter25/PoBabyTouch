@@ -2,7 +2,7 @@ name: Deploy to Azure with GH and Azure CLI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
