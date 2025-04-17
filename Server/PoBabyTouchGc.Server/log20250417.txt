@@ -1,0 +1,5 @@
+2025-04-17 09:01:49.296 -04:00 [INF] Environment: Production
+2025-04-17 09:01:49.322 -04:00 [INF] Using Azurite (local) for Azure Table Storage
+2025-04-17 09:01:49.369 -04:00 [WRN] The WebRootPath was not found: C:\Users\punko\OneDrive\Documents\PoBabyTouch\Server\PoBabyTouchGc.Server\wwwroot. Static files may be unavailable.
+2025-04-17 09:01:49.496 -04:00 [WRN] The WebRootPath was not found: C:\Users\punko\OneDrive\Documents\PoBabyTouch\Server\PoBabyTouchGc.Server\wwwroot. Static files may be unavailable.
+2025-04-17 09:01:49.559 -04:00 [WRN] The WebRootPath was not found: C:\Users\punko\OneDrive\Documents\PoBabyTouch\Server\PoBabyTouchGc.Server\wwwroot. Static files may be unavailable.
