@@ -20,16 +20,34 @@ builder.Host.UseSerilog();
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 
-// Configure Azure Table Storage with Azurite for local development
-string storageConnectionString = builder.Configuration.GetConnectionString("AzureTableStorage") 
+// Configure Azure Table Storage
+// In development: Uses the UserSecrets connection string or Azurite
+// In production: Uses the connection string from App Service config
+string storageConnectionString = builder.Configuration.GetConnectionString("AzureTableStorage")
+    ?? Environment.GetEnvironmentVariable("AzureTableStorage")
     ?? "UseDevelopmentStorage=true"; // Default to Azurite if no connection string provided
 
+Log.Information("Environment: {Environment}", builder.Environment.EnvironmentName);
+Log.Information("Using {StorageType} for Azure Table Storage", 
+    storageConnectionString == "UseDevelopmentStorage=true" ? "Azurite (local)" : "Azure Storage");
+
+// Configure table storage client
 builder.Services.AddSingleton(implementationFactory => {
-    var tableServiceClient = new TableServiceClient(storageConnectionString);
-    // Create the scores table if it doesn't exist
-    var tableClient = tableServiceClient.GetTableClient("Scores");
-    tableClient.CreateIfNotExists();
-    return tableClient;
+    try 
+    {
+        Log.Information("Initializing Azure Table Storage client");
+        var tableServiceClient = new TableServiceClient(storageConnectionString);
+        // Create the scores table if it doesn't exist
+        var tableClient = tableServiceClient.GetTableClient("Scores");
+        tableClient.CreateIfNotExists();
+        Log.Information("Successfully connected to Azure Table Storage and verified 'Scores' table");
+        return tableClient;
+    }
+    catch (Exception ex)
+    {
+        Log.Error(ex, "Failed to initialize Azure Table Storage client");
+        throw; // Rethrow to prevent application from starting with invalid configuration
+    }
 });
 
 // Add CORS policy to allow the Blazor client to call the API
