@@ -54,22 +54,35 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo "Setting deployment status to in_progress with GitHub CLI..."
-        DEPLOYMENT_ID=$(gh api \
+        echo "Attempting to create GitHub deployment..."
+        CREATE_DEPLOYMENT_RESPONSE=$(gh api \
           repos/${{ github.repository }}/deployments \
           -F ref="${{ github.ref }}" \
           -F environment="production" \
           -F description="Deployment to Azure App Service" \
           -F auto_merge=false \
-          -F required_contexts='[]' \
-          --jq '.id')
+          -F required_contexts='[]')
         
+        echo "GitHub Deployment Creation Response:"
+        echo "$CREATE_DEPLOYMENT_RESPONSE"
+        
+        echo "Extracting deployment ID..."
+        DEPLOYMENT_ID=$(echo "$CREATE_DEPLOYMENT_RESPONSE" | gh api --jq '.id') # Use gh api --jq for parsing
+        
+        if [ -z "$DEPLOYMENT_ID" ] || [ "$DEPLOYMENT_ID" == "null" ]; then
+          echo "::error::Failed to create GitHub deployment or extract ID."
+          exit 1
+        fi
+        
+        echo "Setting deployment status to in_progress for ID: $DEPLOYMENT_ID..."
         gh api \
           repos/${{ github.repository }}/deployments/$DEPLOYMENT_ID/statuses \
           -F state="in_progress" \
-          -F description="Deploying to Azure App Service..."
-          
+          -F environment="production" \
+          -F description="Deployment to Azure App Service" \
+          -F auto_merge=false \
         echo "DEPLOYMENT_ID=$DEPLOYMENT_ID" >> $GITHUB_ENV
+        echo "Successfully set deployment status to in_progress."
     
     - name: Login to Azure
       uses: azure/login@v1
