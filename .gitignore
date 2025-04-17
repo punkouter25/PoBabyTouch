@@ -6,6 +6,15 @@
 # dotenv files
 .env
 
+# Azure credentials
+azure_credentials.json
+
+# Azurite storage emulator files
+__azurite_db_*.json
+__blobstorage__/
+__queuestorage__/
+__tablestorage__/
+
 # User-specific files
 *.rsuser
 *.suo
