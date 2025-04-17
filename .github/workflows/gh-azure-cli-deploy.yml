@@ -57,11 +57,11 @@ jobs:
         echo "Attempting to create GitHub deployment..."
         CREATE_DEPLOYMENT_RESPONSE=$(gh api \
           repos/${{ github.repository }}/deployments \
-          -F ref="${{ github.ref }}" \
-          -F environment="production" \
-          -F description="Deployment to Azure App Service" \
-          -F auto_merge=false \
-          -F required_contexts='[]')
+          --field ref="${{ github.ref }}" \
+          --field environment="production" \
+          --field description="Deployment to Azure App Service" \
+          --field auto_merge=false \
+          --field required_contexts='[]') # Use --field for JSON array
         
         echo "GitHub Deployment Creation Response:"
         echo "$CREATE_DEPLOYMENT_RESPONSE"
@@ -77,10 +77,9 @@ jobs:
         echo "Setting deployment status to in_progress for ID: $DEPLOYMENT_ID..."
         gh api \
           repos/${{ github.repository }}/deployments/$DEPLOYMENT_ID/statuses \
-          -F state="in_progress" \
-          -F environment="production" \
-          -F description="Deployment to Azure App Service" \
-          -F auto_merge=false \
+          --field state="in_progress" \
+          --field description="Deploying to Azure App Service..." # Use --field for strings too for consistency
+          
         echo "DEPLOYMENT_ID=$DEPLOYMENT_ID" >> $GITHUB_ENV
         echo "Successfully set deployment status to in_progress."
     
