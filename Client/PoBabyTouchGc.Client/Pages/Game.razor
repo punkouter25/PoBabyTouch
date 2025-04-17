@@ -28,18 +28,11 @@
             </div>
         }
     </div>
-
-    @if (isGameStarted && !isGameOver)
-    {
-        <button class="pause-button" @onclick="TogglePause">
-            @(isPaused ? "Resume" : "Pause")
-        </button>
-    }
     
     @if (!isGameStarted)
     {
         <div class="start-overlay">
-            <h2>PoBabyTouch</h2>
+            <h2>PoBabyTouchGc</h2>
             <p>Tap the circles as quickly as you can to score points!</p>
             <button class="start-button" @onclick="StartGame">Start Game</button>
         </div>
@@ -137,7 +130,7 @@
         z-index: 100;
     }
     
-    .start-button, .restart-button, .home-button, .pause-button {
+    .start-button, .restart-button, .home-button {
         background-color: #3a86ff;
         color: white;
         border: none;
@@ -150,18 +143,9 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     
-    .start-button:hover, .restart-button:hover, .home-button:hover, .pause-button:hover {
+    .start-button:hover, .restart-button:hover, .home-button:hover {
         transform: scale(1.05);
         background-color: #2667cc;
-    }
-    
-    .pause-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 50;
-        padding: 8px 16px;
-        font-size: 1rem;
     }
     
     .high-score-modal {
@@ -249,9 +233,8 @@
     private Random random = new Random();
     private bool isGameStarted = false;
     private bool isGameOver = false;
-    private bool isPaused = false;
     private int score = 0;
-    private int timeRemaining = 20;
+    private int timeRemaining = 3; // Changed from 20 to 3 seconds
     private List<GameCircle> circles = new List<GameCircle>();
     private int gameAreaWidth = 0;
     private int gameAreaHeight = 0;
@@ -353,9 +336,8 @@
             
         isGameStarted = true;
         isGameOver = false;
-        isPaused = false;
         score = 0;
-        timeRemaining = 20;
+        timeRemaining = 3; // Changed from 20 to 3 seconds
         
         InitializeCircles();
         
@@ -369,9 +351,6 @@
     
     private void GameTimerTick(object? sender, ElapsedEventArgs e)
     {
-        if (isPaused)
-            return;
-            
         InvokeAsync(() =>
         {
             timeRemaining--;
@@ -392,8 +371,7 @@
         
         isGameOver = true;
         
-        // TODO: Check if score is high enough for leaderboard and show high score modal
-        // For now, always show the high score modal for testing
+        // Show high score modal
         showHighScoreModal = true;
     }
     
@@ -410,21 +388,16 @@
         NavigationManager.NavigateTo("/");
     }
     
-    private void TogglePause()
-    {
-        isPaused = !isPaused;
-    }
-    
     private void UpdatePhysics(object? sender, ElapsedEventArgs e)
     {
-        if (!isGameStarted || isGameOver || isPaused)
+        if (!isGameStarted || isGameOver)
             return;
             
         InvokeAsync(() =>
         {
             // Calculate current speed multiplier based on remaining time
             // The speed increases as time decreases
-            float speedMultiplier = 1.0f + (20 - timeRemaining) / 20.0f * (SpeedIncreaseFactor - 1.0f);
+            float speedMultiplier = 1.0f + (3 - timeRemaining) / 3.0f * (SpeedIncreaseFactor - 1.0f);
             
             foreach (var circle in circles.Where(c => c.IsVisible))
             {
@@ -506,7 +479,7 @@
     
     private async Task HandleCircleClick(MouseEventArgs e, GameCircle circle)
     {
-        if (!isGameStarted || isGameOver || isPaused || !circle.IsVisible)
+        if (!isGameStarted || isGameOver || !circle.IsVisible)
             return;
             
         // Increment score
@@ -515,8 +488,15 @@
         // Hide the circle
         circle.IsVisible = false;
         
-        // Play sound effect based on person
-        await JSRuntime.InvokeVoidAsync("playSound", circle.Person);
+        // This try/catch prevents the JSInterop error from crashing the app
+        try {
+            // Play sound effect based on person
+            await JSRuntime.InvokeVoidAsync("playSound", circle.Person);
+        }
+        catch (Exception ex) {
+            Console.Error.WriteLine($"Error playing sound: {ex.Message}");
+            // Continue execution even if sound playback fails
+        }
         
         // Schedule circle to reappear after delay
         _ = Task.Run(async () =>
