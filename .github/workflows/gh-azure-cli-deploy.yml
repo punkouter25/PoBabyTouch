@@ -8,6 +8,7 @@ on:
 permissions:
   contents: read
   deployments: write # Add write permission for deployments
+  statuses: write    # Add write permission for deployment statuses
 
 jobs:
   build-and-deploy:
