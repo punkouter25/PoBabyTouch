@@ -71,6 +71,8 @@ public class ScoresController : ControllerBase
             }
             else
             {
+                // Log the failure from the service layer if it wasn't an exception
+                Log.Warning("Score submission failed for submission: {@ScoreSubmission}. Service returned false.", submission);
                 return BadRequest("Failed to submit score");
             }
         }

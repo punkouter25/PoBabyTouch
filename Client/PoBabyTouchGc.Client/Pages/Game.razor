@@ -254,20 +254,35 @@
     {
         if (firstRender)
         {
-            // Initialize game area dimensions
-            var dimensions = await JSRuntime.InvokeAsync<int[]>("getElementDimensions", gameAreaRef);
-            if (dimensions.Length >= 2)
+            try
             {
-                gameAreaWidth = dimensions[0];
-                gameAreaHeight = dimensions[1];
-                
-                // Initialize circle positions
-                InitializeCircles();
-                
-                // Set up physics timer
-                physicsFpsTimer = new Timer(1000.0 / PhysicsFps);
-                physicsFpsTimer.Elapsed += UpdatePhysics;
-                physicsFpsTimer.AutoReset = true;
+                // Initialize game area dimensions
+                var dimensions = await JSRuntime.InvokeAsync<int[]>("getElementDimensions", gameAreaRef);
+                if (dimensions != null && dimensions.Length >= 2)
+                {
+                    gameAreaWidth = dimensions[0];
+                    gameAreaHeight = dimensions[1];
+
+                    // Initialize circle positions
+                    InitializeCircles();
+
+                    // Set up physics timer
+                    physicsFpsTimer = new Timer(1000.0 / PhysicsFps);
+                    physicsFpsTimer.Elapsed += UpdatePhysics;
+                    physicsFpsTimer.AutoReset = true;
+                }
+                else
+                {
+                    // Handle the case where dimensions are not as expected
+                    Console.Error.WriteLine("Error: Could not get valid game area dimensions.");
+                    // Potentially display a message to the user or attempt retry
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine($"Error during JS interop 'getElementDimensions': {ex.Message}");
+                // Potentially display an error message to the user
+                // or implement a fallback mechanism if game can't start.
             }
         }
     }
@@ -275,9 +290,23 @@
     private void InitializeCircles()
     {
         circles.Clear();
-        
+
         // Calculate circle radius based on screen width
         int circleRadius = (int)(gameAreaWidth * CircleRadiusPercent / 100);
+
+        // Ensure circle radius is not zero and game area is large enough
+        if (circleRadius <= 0)
+        {
+            Console.Error.WriteLine("Error: Circle radius is zero or negative. Skipping circle initialization.");
+            return;
+        }
+
+        if (gameAreaWidth < 2 * circleRadius || gameAreaHeight < 2 * circleRadius)
+        {
+            Console.Error.WriteLine("Error: Game area is too small to place circles. Skipping circle initialization.");
+            // Optionally, inform the user via a UI message if this is a common scenario.
+            return;
+        }
         
         for (int i = 0; i < TotalCircles; i++)
         {
@@ -307,13 +336,22 @@
             };
             
             // Ensure no overlap with existing circles
-            while (circles.Any(c => IsCircleOverlapping(newCircle, c)))
+            int placementAttempts = 0;
+            while (circles.Any(c => IsCircleOverlapping(newCircle, c)) && placementAttempts < 50) // Max 50 attempts to prevent infinite loop
             {
                 newCircle.X = random.Next(circleRadius, gameAreaWidth - circleRadius);
                 newCircle.Y = random.Next(circleRadius, gameAreaHeight - circleRadius);
+                placementAttempts++;
             }
-            
-            circles.Add(newCircle);
+
+            if (placementAttempts < 50) // Only add if a valid position was found
+            {
+                circles.Add(newCircle);
+            }
+            else
+            {
+                Console.Error.WriteLine($"Could not place circle {i+1} without overlap after 50 attempts.");
+            }
         }
     }
     
@@ -487,6 +525,9 @@
         
         // Hide the circle
         circle.IsVisible = false;
+
+        // Ensure immediate UI update for score and circle visibility
+        StateHasChanged();
         
         // This try/catch prevents the JSInterop error from crashing the app
         try {
@@ -512,6 +553,14 @@
                     int attempts = 0;
                     int maxAttempts = 50;
                     
+                    // Ensure game area is large enough for the circle to reappear
+                    if (gameAreaWidth < 2 * circle.Radius || gameAreaHeight < 2 * circle.Radius)
+                    {
+                        Console.Error.WriteLine($"Game area too small for circle {circle.Id} to reappear. Width: {gameAreaWidth}, Height: {gameAreaHeight}, Radius: {circle.Radius}");
+                        // Circle will not reappear if area is too small.
+                        return;
+                    }
+
                     while (!validPosition && attempts < maxAttempts)
                     {
                         attempts++;
@@ -522,14 +571,22 @@
                         // Check for overlaps
                         validPosition = !circles.Any(c => c.IsVisible && c.Id != circle.Id && IsCircleOverlapping(circle, c));
                     }
-                    
-                    // Change velocity to make movement varied
-                    circle.VelocityX = (float)(random.NextDouble() * 2 - 1) * BaseSpeed;
-                    circle.VelocityY = (float)(random.NextDouble() * 2 - 1) * BaseSpeed;
-                    
-                    // Make circle visible again
-                    circle.IsVisible = true;
-                    StateHasChanged();
+
+                    if (validPosition)
+                    {
+                        // Change velocity to make movement varied
+                        circle.VelocityX = (float)(random.NextDouble() * 2 - 1) * BaseSpeed;
+                        circle.VelocityY = (float)(random.NextDouble() * 2 - 1) * BaseSpeed;
+
+                        // Make circle visible again
+                        circle.IsVisible = true;
+                        StateHasChanged();
+                    }
+                    else
+                    {
+                        Console.Error.WriteLine($"Could not find a non-overlapping position for circle {circle.Id} after {maxAttempts} attempts. It will not reappear.");
+                        // Optionally, handle this case differently, e.g., try reducing radius temporarily or queue it for later.
+                    }
                 }
             });
         });
@@ -613,9 +670,5 @@
         public float VelocityY { get; set; }
     }
     
-    private class ScoreSubmission
-    {
-        public string Initials { get; set; } = "";
-        public int Score { get; set; }
-    }
+    // Removed local ScoreSubmission class, will use PoBabyTouchGc.Shared.Models.ScoreSubmission
 }
