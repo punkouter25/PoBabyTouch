@@ -11,7 +11,7 @@ namespace PoBabyTouchGc.Client.Services
         public bool IsGameActive { get; private set; }
         public bool IsGameOver { get; private set; }
 
-        public event Action OnChange;
+        public event Action? OnChange;
 
         public GameStateService()
         {
