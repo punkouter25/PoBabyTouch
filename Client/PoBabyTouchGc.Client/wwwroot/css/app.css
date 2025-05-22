@@ -1,5 +1,35 @@
+:root {
+    /* Color Palette */
+    --primary-color: #FF6F61; /* Playful Red-Orange */
+    --secondary-color: #6B5B95; /* Calming Purple */
+    --accent-color-1: #88B04B; /* Fresh Green */
+    --accent-color-2: #F7CAC9; /* Soft Pink */
+    --background-light: #F8F8F8; /* Light background */
+    --text-dark: #333333; /* Dark text for readability */
+    --text-light: #FFFFFF; /* Light text for contrast */
+    --button-primary-bg: var(--primary-color);
+    --button-primary-text: var(--text-light);
+    --button-secondary-bg: var(--accent-color-1);
+    --button-secondary-text: var(--text-light);
+
+    /* Typography */
+    --font-family-primary: 'Comic Sans MS', cursive, sans-serif; /* Playful font */
+    --font-family-secondary: 'Arial', sans-serif; /* Readable fallback */
+    --font-size-base: 16px;
+    --font-size-large: 1.5rem;
+    --font-size-xl: 2.5rem;
+}
+
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    color: var(--text-dark);
+    background-color: var(--background-light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-primary);
+    color: var(--primary-color);
 }
 
 h1:focus {
@@ -7,17 +37,17 @@ h1:focus {
 }
 
 a, .btn-link {
-    color: #0071c1;
+    color: var(--primary-color);
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+    color: var(--button-primary-text);
+    background-color: var(--button-primary-bg);
+    border-color: var(--primary-color);
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  box-shadow: 0 0 0 0.1rem var(--background-light), 0 0 0 0.25rem var(--accent-color-1);
 }
 
 .content {
@@ -111,4 +141,69 @@ code {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
     text-align: start;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    :root {
+        --font-size-base: 14px;
+        --font-size-large: 1.2rem;
+        --font-size-xl: 2rem;
+    }
+
+    .game-header {
+        padding: 8px 15px;
+        font-size: 1.2rem;
+    }
+
+    .start-overlay h2, .game-over-overlay h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    .start-overlay p, .game-over-overlay p {
+        font-size: var(--font-size-large);
+    }
+
+    .start-button, .restart-button, .home-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .high-score-content {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .high-score-content input {
+        width: 100px;
+        font-size: 20px;
+    }
+
+    .submit-button, .cancel-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-size-base: 12px;
+        --font-size-large: 1rem;
+        --font-size-xl: 1.8rem;
+    }
+
+    .game-header {
+        padding: 5px 10px;
+        font-size: 1rem;
+    }
+
+    .start-button, .restart-button, .home-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .high-score-content input {
+        width: 80px;
+        font-size: 18px;
+    }
 }

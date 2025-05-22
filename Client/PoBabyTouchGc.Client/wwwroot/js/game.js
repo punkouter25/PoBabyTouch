@@ -13,16 +13,16 @@ const audioCache = {};
 
 // Audio file name mapping based on the actual files in the directories
 const audioFiles = {
-    "matt": ["Recording.m4a", "Recording copy.m4a", "Recording copy 2.m4a", "Recording copy 3.m4a", "Recording copy 4.m4a"],
-    "kim": ["Recording.m4a", "Recording copy.m4a", "Recording copy 2.m4a", "Recording copy 3.m4a", "Recording copy 4.m4a"],
-    "nick": ["Recording.m4a", "Recording copy.m4a", "Recording copy 2.m4a", "Recording copy 3.m4a", "Recording copy 4.m4a"]
+    "matt": ["Recording.m4a"],
+    "kim": ["Recording.m4a"],
+    "nick": ["Recording.m4a"]
 };
 
 // Function to play sound effect based on person
 function playSound(person) {
     try {
-        // Get a random number between 0 and 4
-        const soundIndex = Math.floor(Math.random() * 5);
+        // Use the first (and only) sound file
+        const soundIndex = 0; 
         
         // Create a key for caching
         const audioKey = `${person}_${soundIndex}`;

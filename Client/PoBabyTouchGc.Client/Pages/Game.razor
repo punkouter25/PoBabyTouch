@@ -2,47 +2,40 @@
 @using System.Net.Http.Json
 @using System.Timers
 @using PoBabyTouchGc.Shared.Models
+@using PoBabyTouchGc.Client.Services
 @inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
 @inject HttpClient Http
+@inject GameStateService GameStateService
 @implements IDisposable
 
 <PageTitle>PoBabyTouchGc</PageTitle>
 
-<div class="game-container @(isGameOver ? "game-over" : "")">
+<div class="game-container @(GameStateService.IsGameOver ? "game-over" : "")">
     <div class="game-header">
-        <div class="score-display">Score: @score</div>
+        <div class="score-display">Score: @GameStateService.CurrentScore</div>
         <div class="timer-display">Time: @timeRemaining</div>
     </div>
     
-    <div class="game-area" @ref="gameAreaRef" @onclick="HandleBackgroundClick">
+    <div class="game-area" @ref="gameAreaRef" @onclick="HandleBackgroundClick" @key="gameAreaKey">
         @foreach (var circle in circles)
         {
-            <div class="game-circle @circle.PersonClass"
+            <div class="game-circle @circle.PersonClass @(circle.IsVisible ? "appear" : "disappear") @(circle.IsHit ? "hit-effect" : "")"
                  style="left: @(circle.X)px; top: @(circle.Y)px; 
-                        width: @(circle.Radius * 2)px; height: @(circle.Radius * 2)px;
-                        opacity: @(circle.IsVisible ? "1" : "0");"
+                        width: @(circle.Radius * 2)px; height: @(circle.Radius * 2)px;"
                  @onclick="@(e => HandleCircleClick(e, circle))"
                  @onclick:stopPropagation="true"
                  @key="circle.Id">
             </div>
         }
     </div>
+      @* Removed the start overlay since we want the game to start automatically *@
     
-    @if (!isGameStarted)
+    @if (GameStateService.IsGameOver || showHighScoreModal)
     {
-        <div class="start-overlay">
-            <h2>PoBabyTouchGc</h2>
-            <p>Tap the circles as quickly as you can to score points!</p>
-            <button class="start-button" @onclick="StartGame">Start Game</button>
-        </div>
-    }
-    
-    @if (isGameOver)
-    {
-        <div class="game-over-overlay">
+        <div class="game-over-overlay @(GameStateService.IsGameOver && !showHighScoreModal ? "" : "fade-out")">
             <h2>Game Over!</h2>
-            <p>Your final score: @score</p>
+            <p>Your final score: @GameStateService.CurrentScore</p>
             <button class="restart-button" @onclick="RestartGame">Play Again</button>
             <button class="home-button" @onclick="GoToHome">Main Menu</button>
         </div>
@@ -53,7 +46,7 @@
         <div class="high-score-modal">
             <div class="high-score-content">
                 <h2>New High Score!</h2>
-                <p>Your score: @score</p>
+                <p>Your score: @GameStateService.CurrentScore</p>
                 <p>Enter your initials (3 letters):</p>
                 <input type="text" maxlength="3" @bind="playerInitials" @onkeyup="ValidateInitials" />
                 <div class="button-group">
@@ -231,9 +224,6 @@
     private Timer? gameTimer;
     private Timer? physicsFpsTimer;
     private Random random = new Random();
-    private bool isGameStarted = false;
-    private bool isGameOver = false;
-    private int score = 0;
     private int timeRemaining = 3; // Changed from 20 to 3 seconds
     private List<GameCircle> circles = new List<GameCircle>();
     private int gameAreaWidth = 0;
@@ -241,6 +231,7 @@
     private bool showHighScoreModal = false;
     private string playerInitials = "";
     private bool isValidInitials = false;
+    private Guid gameAreaKey = Guid.NewGuid(); // New field for forcing re-render
     
     // Constants
     private const int TotalCircles = 7;
@@ -249,8 +240,12 @@
     private const int PhysicsFps = 60;
     private const float BaseSpeed = 2.0f;
     private const float SpeedIncreaseFactor = 1.5f;
-    
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+
+    protected override void OnInitialized()
+    {
+        GameStateService.OnChange += StateHasChanged;
+    }
+      protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
@@ -261,15 +256,16 @@
                 if (dimensions != null && dimensions.Length >= 2)
                 {
                     gameAreaWidth = dimensions[0];
-                    gameAreaHeight = dimensions[1];
-
-                    // Initialize circle positions
+                    gameAreaHeight = dimensions[1];                    // Initialize circle positions
                     InitializeCircles();
 
                     // Set up physics timer
                     physicsFpsTimer = new Timer(1000.0 / PhysicsFps);
                     physicsFpsTimer.Elapsed += UpdatePhysics;
                     physicsFpsTimer.AutoReset = true;
+                    
+                    // Automatically start the game without showing the start overlay
+                    StartGame();
                 }
                 else
                 {
@@ -372,19 +368,28 @@
         if (gameAreaWidth == 0 || gameAreaHeight == 0)
             return;
             
-        isGameStarted = true;
-        isGameOver = false;
-        score = 0;
+        // Stop and dispose existing timers to ensure a clean restart
+        gameTimer?.Stop();
+        gameTimer?.Dispose();
+        physicsFpsTimer?.Stop();
+        physicsFpsTimer?.Dispose();
+
+        GameStateService.StartGame();
         timeRemaining = 3; // Changed from 20 to 3 seconds
         
         InitializeCircles();
         
-        physicsFpsTimer?.Start();
+        physicsFpsTimer = new Timer(1000.0 / PhysicsFps);
+        physicsFpsTimer.Elapsed += UpdatePhysics;
+        physicsFpsTimer.AutoReset = true;
+        physicsFpsTimer.Start();
         
         gameTimer = new Timer(1000);
         gameTimer.Elapsed += GameTimerTick;
         gameTimer.AutoReset = true;
         gameTimer.Start();
+
+        gameAreaKey = Guid.NewGuid(); // Force re-render of game area
     }
     
     private void GameTimerTick(object? sender, ElapsedEventArgs e)
@@ -395,7 +400,7 @@
             
             if (timeRemaining <= 0)
             {
-                EndGame();
+                GameStateService.EndGame();
             }
             
             StateHasChanged();
@@ -407,18 +412,16 @@
         gameTimer?.Stop();
         physicsFpsTimer?.Stop();
         
-        isGameOver = true;
+        GameStateService.EndGame();
         
         // Show high score modal
         showHighScoreModal = true;
     }
-    
-    private void RestartGame()
+      private void RestartGame()
     {
-        isGameOver = false;
         showHighScoreModal = false;
         playerInitials = "";
-        StartGame();
+        StartGame(); // Call StartGame instead of GameStateService.StartGame() to properly reinitialize everything
     }
     
     private void GoToHome()
@@ -428,7 +431,7 @@
     
     private void UpdatePhysics(object? sender, ElapsedEventArgs e)
     {
-        if (!isGameStarted || isGameOver)
+        if (!GameStateService.IsGameActive || GameStateService.IsGameOver)
             return;
             
         InvokeAsync(() =>
@@ -517,11 +520,14 @@
     
     private async Task HandleCircleClick(MouseEventArgs e, GameCircle circle)
     {
-        if (!isGameStarted || isGameOver || !circle.IsVisible)
+        if (!GameStateService.IsGameActive || GameStateService.IsGameOver || !circle.IsVisible)
             return;
             
+        // Add a temporary class for visual feedback (e.g., a quick scale/flash)
+        circle.IsHit = true;
+        
         // Increment score
-        score++;
+        GameStateService.AddScore(1);
         
         // Hide the circle
         circle.IsVisible = false;
@@ -546,8 +552,11 @@
             
             await InvokeAsync(() =>
             {
-                if (isGameStarted && !isGameOver)
+                if (GameStateService.IsGameActive && !GameStateService.IsGameOver)
                 {
+                    // Remove hit class
+                    circle.IsHit = false;
+
                     // Find a new non-overlapping position
                     bool validPosition = false;
                     int attempts = 0;
@@ -594,11 +603,11 @@
     
     private void HandleBackgroundClick()
     {
-        if (!isGameStarted && !isGameOver)
+        if (!GameStateService.IsGameActive && !GameStateService.IsGameOver)
             StartGame();
     }
     
-    private void ValidateInitials()
+    private void ValidateInitials(KeyboardEventArgs e)
     {
         // Ensure initials are 3 alpha characters
         playerInitials = new string(playerInitials.ToUpper().Where(char.IsLetter).ToArray());
@@ -607,6 +616,13 @@
             playerInitials = playerInitials.Substring(0, 3);
             
         isValidInitials = playerInitials.Length == 3;
+        StateHasChanged(); // Re-add this line to force UI update
+
+        // If Enter key is pressed and initials are valid, submit the high score
+        if (e.Code == "Enter" && isValidInitials)
+        {
+            _ = SubmitHighScore();
+        }
     }
     
     private async Task SubmitHighScore()
@@ -620,7 +636,7 @@
             var scoreSubmission = new ScoreSubmission
             {
                 Initials = playerInitials,
-                Score = score
+                Score = GameStateService.CurrentScore
             };
             
             // Submit score to leaderboard API
@@ -628,7 +644,7 @@
             
             if (response.IsSuccessStatusCode)
             {
-                Console.WriteLine($"Successfully submitted high score: {score} for {playerInitials}");
+                Console.WriteLine($"Successfully submitted high score: {GameStateService.CurrentScore} for {playerInitials}");
                 showHighScoreModal = false;
                 NavigationManager.NavigateTo("/leader");
             }
@@ -648,13 +664,14 @@
     private void CancelHighScore()
     {
         showHighScoreModal = false;
-        isGameOver = true;
+        GameStateService.EndGame(); // This will set IsGameOver to true
     }
     
     public void Dispose()
     {
         gameTimer?.Dispose();
         physicsFpsTimer?.Dispose();
+        GameStateService.OnChange -= StateHasChanged;
     }
     
     private class GameCircle
@@ -664,6 +681,7 @@
         public float Y { get; set; }
         public int Radius { get; set; }
         public bool IsVisible { get; set; }
+        public bool IsHit { get; set; } = false; // New property for hit effect
         public string Person { get; set; } = "";
         public string PersonClass { get; set; } = "";
         public float VelocityX { get; set; }
