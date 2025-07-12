@@ -1,0 +1,133 @@
+.leaderboard-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    text-align: center;
+    color: #3a86ff;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.leaderboard-content {
+    flex: 1;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard-table th {
+    background-color: #3a86ff;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #ccc;
+}
+
+.leaderboard-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.top-rank {
+    background-color: #fff8e6;
+    font-weight: bold;
+}
+
+.trophy {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+.gold {
+    color: #ffd700;
+}
+
+.silver {
+    color: #c0c0c0;
+}
+
+.bronze {
+    color: #cd7f32;
+}
+
+.rank-cell {
+    text-align: center;
+    width: 60px;
+}
+
+.initials-cell {
+    font-weight: bold;
+    width: 80px;
+}
+
+.score-cell {
+    width: 80px;
+    text-align: right;
+}
+
+.date-cell {
+    width: 120px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.empty-leaderboard {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-style: italic;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.navigation-buttons .btn {
+    padding: 10px 25px;
+    border-radius: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .leaderboard-container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .leaderboard-table th, 
+    .leaderboard-table td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    
+    .date-cell {
+        display: none;
+    }
+}

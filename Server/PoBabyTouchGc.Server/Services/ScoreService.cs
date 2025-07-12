@@ -34,7 +34,7 @@ public class ScoreService : IScoreService
     {
         try
         {
-            Log.Information("Retrieving top 10 scores from leaderboard");
+            Log.Information("ScoreService.GetTopScoresAsync: Retrieving top 10 scores from leaderboard");
             
             // Query the table for all scores with the Scores partition key, ordered by score descending
             var query = _tableClient.QueryAsync<ScoreEntity>(
@@ -67,12 +67,12 @@ public class ScoreService : IScoreService
                 topScores[i].Rank = i + 1;
             }
 
-            Log.Information("Retrieved {Count} scores from leaderboard", topScores.Count);
+            Log.Information("ScoreService.GetTopScoresAsync: Retrieved {Count} scores from leaderboard", topScores.Count);
             return topScores;
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Error retrieving top scores from leaderboard");
+            Log.Error(ex, "ScoreService.GetTopScoresAsync: Error retrieving top scores from leaderboard");
             return new List<LeaderboardEntry>();
         }
     }
@@ -86,9 +86,12 @@ public class ScoreService : IScoreService
     {
         try
         {
+            Log.Information("ScoreService.SubmitScoreAsync: Attempting to submit score for Initials: {Initials}, Score: {Score}", 
+                scoreSubmission?.Initials, scoreSubmission?.Score);
+
             if (scoreSubmission == null || string.IsNullOrWhiteSpace(scoreSubmission.Initials) || scoreSubmission.Score <= 0)
             {
-                Log.Warning("Invalid score submission: {@ScoreSubmission}", scoreSubmission);
+                Log.Warning("ScoreService.SubmitScoreAsync: Invalid score submission received: {@ScoreSubmission}", scoreSubmission);
                 return false;
             }
 
@@ -96,6 +99,7 @@ public class ScoreService : IScoreService
             var initials = scoreSubmission.Initials.ToUpper().PadRight(3).Substring(0, 3);
 
             // Create a unique row key based on a combination of score, initials, and timestamp
+            // Using a fixed-length score string (D10) to ensure consistent sorting in table storage
             var rowKey = $"{scoreSubmission.Score:D10}_{initials}_{DateTime.UtcNow.Ticks}";
 
             var scoreEntity = new ScoreEntity
@@ -106,18 +110,18 @@ public class ScoreService : IScoreService
                 Score = scoreSubmission.Score
             };
 
-            Log.Information("Submitting score: {@ScoreEntity}", scoreEntity);
+            Log.Information("ScoreService.SubmitScoreAsync: Prepared ScoreEntity: {@ScoreEntity}", scoreEntity);
 
             // Add the score to the table
             await _tableClient.AddEntityAsync(scoreEntity);
             
-            Log.Information("Successfully submitted score for {Initials} with score {Score}", initials, scoreSubmission.Score);
+            Log.Information("ScoreService.SubmitScoreAsync: Successfully submitted score for {Initials} with score {Score}", initials, scoreSubmission.Score);
             return true;
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Error submitting score for {Initials} with score {Score}", 
-                scoreSubmission?.Initials, scoreSubmission?.Score);
+            Log.Error(ex, "ScoreService.SubmitScoreAsync: Error submitting score for Initials: {Initials}, Score: {Score}. Exception: {ErrorMessage}", 
+                scoreSubmission?.Initials, scoreSubmission?.Score, ex.Message);
             return false;
         }
     }

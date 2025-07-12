@@ -1,0 +1,158 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: #f0f8ff;
+    overflow: hidden;
+    position: relative;
+    touch-action: manipulation;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #3a86ff;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.game-area {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f8ff;
+}
+
+.game-circle {
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+.matt-circle {
+    background-color: #ff6b6b;
+}
+
+.nick-circle {
+    background-color: #52b788;
+}
+
+.kim-circle {
+    background-color: #4cc9f0;
+}
+
+.start-overlay, .game-over-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    z-index: 100;
+}
+
+.start-button, .restart-button, .home-button {
+    background-color: #3a86ff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.start-button:hover, .restart-button:hover, .home-button:hover {
+    transform: scale(1.05);
+    background-color: #2667cc;
+}
+
+.high-score-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 200;
+}
+
+.high-score-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.high-score-content h2 {
+    color: #3a86ff;
+    margin-bottom: 20px;
+}
+
+.high-score-content input {
+    width: 120px;
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 20px 0;
+    border: 2px solid #3a86ff;
+    border-radius: 5px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.submit-button, .cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-button {
+    background-color: #3a86ff;
+    color: white;
+}
+
+.submit-button:disabled {
+    background-color: #a6c8ff;
+    cursor: not-allowed;
+}
+
+.cancel-button {
+    background-color: #e5e5e5;
+    color: #333;
+}
+
+.submit-button:hover:not(:disabled) {
+    background-color: #2667cc;
+}
+
+.cancel-button:hover {
+    background-color: #d1d1d1;
+}

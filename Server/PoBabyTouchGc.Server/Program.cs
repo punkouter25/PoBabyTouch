@@ -50,6 +50,22 @@ builder.Services.AddSingleton(implementationFactory => {
     }
 });
 
+// Register TableServiceClient for high scores
+builder.Services.AddSingleton<TableServiceClient>(implementationFactory => {
+    try 
+    {
+        Log.Information("Initializing Azure TableServiceClient for high scores");
+        var tableServiceClient = new TableServiceClient(storageConnectionString);
+        Log.Information("Successfully initialized TableServiceClient");
+        return tableServiceClient;
+    }
+    catch (Exception ex)
+    {
+        Log.Error(ex, "Failed to initialize TableServiceClient");
+        throw;
+    }
+});
+
 // Add CORS policy to allow the Blazor client to call the API
 builder.Services.AddCors(options =>
 {
@@ -61,6 +77,7 @@ builder.Services.AddCors(options =>
 
 // Add our custom services
 builder.Services.AddScoped<IScoreService, ScoreService>();
+builder.Services.AddScoped<IHighScoreService, HighScoreService>();
 
 // Configure response compression
 builder.Services.AddResponseCompression(opts =>

@@ -35,13 +35,13 @@ public class ScoresController : ControllerBase
     {
         try
         {
-            Log.Information("API Request: Get top scores");
+            Log.Information("ScoresController.GetTopScores: API Request: Get top scores");
             var scores = await _scoreService.GetTopScoresAsync();
             return Ok(scores);
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Error getting top scores");
+            Log.Error(ex, "ScoresController.GetTopScores: Error getting top scores");
             return StatusCode(500, "An error occurred while retrieving the leaderboard");
         }
     }
@@ -58,11 +58,11 @@ public class ScoresController : ControllerBase
         {
             if (!ModelState.IsValid)
             {
-                Log.Warning("Invalid score submission: {@ModelState}", ModelState);
+            Log.Warning("ScoresController.SubmitScore: Invalid score submission: {@ModelState}", ModelState);
                 return BadRequest(ModelState);
             }
 
-            Log.Information("API Request: Submit score {@ScoreSubmission}", submission);
+            Log.Information("ScoresController.SubmitScore: API Request: Submit score {@ScoreSubmission}", submission);
             var result = await _scoreService.SubmitScoreAsync(submission);
             
             if (result)
@@ -72,13 +72,13 @@ public class ScoresController : ControllerBase
             else
             {
                 // Log the failure from the service layer if it wasn't an exception
-                Log.Warning("Score submission failed for submission: {@ScoreSubmission}. Service returned false.", submission);
+                Log.Warning("ScoresController.SubmitScore: Score submission failed for submission: {@ScoreSubmission}. Service returned false.", submission);
                 return BadRequest("Failed to submit score");
             }
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Error submitting score: {@ScoreSubmission}", submission);
+            Log.Error(ex, "ScoresController.SubmitScore: Error submitting score: {@ScoreSubmission}", submission);
             return StatusCode(500, "An error occurred while submitting your score");
         }
     }
