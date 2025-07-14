@@ -120,7 +120,7 @@
 @code {
     private string SelectedGameMode { get; set; } = "Default";
 
-    private async Task OnGameModeChanged(ChangeEventArgs e)
+    private void OnGameModeChanged(ChangeEventArgs e)
     {
         SelectedGameMode = e.Value?.ToString() ?? "Default";
         StateHasChanged();

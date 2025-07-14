@@ -73,7 +73,6 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Rank</th>
                     <th>Initials</th>
                     <th>Score</th>
                     <th>Date</th>
@@ -85,10 +84,9 @@
                     @foreach (var entry in leaderboardEntries)
                     {
                         <tr>
-                            <td>@entry.Rank</td>
-                            <td>@entry.Initials</td>
+                            <td>@entry.PlayerInitials</td>
                             <td>@entry.Score</td>
-                            <td>@entry.Date.ToLocalTime().ToString("g")</td>
+                            <td>@entry.Timestamp?.DateTime.ToLocalTime().ToString("g")</td>
                         </tr>
                     }
                 }
@@ -136,7 +134,7 @@
     private bool internetStatus = false;
     private string internetStatusMessage = "Checking internet connection...";
     
-    private List<LeaderboardEntry>? leaderboardEntries;
+    private List<HighScore>? leaderboardEntries;
 
     protected override async Task OnInitializedAsync()
     {
@@ -217,7 +215,7 @@
     {
         try
         {
-            var response = await Http.GetFromJsonAsync<List<LeaderboardEntry>>("api/scores");
+            var response = await Http.GetFromJsonAsync<List<HighScore>>("api/highscores");
             leaderboardEntries = response;
         }
         catch (Exception)

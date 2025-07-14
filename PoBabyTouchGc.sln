@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoBabyTouchGc.Server", "Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoBabyTouchGc.Shared", "Shared\PoBabyTouchGc.Shared\PoBabyTouchGc.Shared.csproj", "{9F814FA6-EB39-40C2-A558-26A2584CC7F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoBabyTouchGc.Tests", "Tests\PoBabyTouchGc.Tests\PoBabyTouchGc.Tests.csproj", "{80C5DC96-DAF2-4570-9915-01B8A60D87E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoBabyTouchGc.IntegrationTests", "PoBabyTouchGc.IntegrationTests\PoBabyTouchGc.IntegrationTests.csproj", "{80C5DC96-DAF2-4570-9915-01B8A60D87E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

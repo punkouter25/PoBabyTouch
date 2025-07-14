@@ -38,30 +38,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var entry in leaderboardEntries)
+                    @for (int i = 0; i < leaderboardEntries.Count && i < 10; i++)
                     {
-                        <tr class="@(entry.Rank <= 3 ? "top-rank" : "")">
-                            <td class="rank-cell">
-                                @if (entry.Rank == 1)
-                                {
-                                    <span class="trophy gold">🏆</span>
-                                }
-                                else if (entry.Rank == 2)
-                                {
-                                    <span class="trophy silver">🥈</span>
-                                }
-                                else if (entry.Rank == 3)
-                                {
-                                    <span class="trophy bronze">🥉</span>
-                                }
-                                else
-                                {
-                                    @entry.Rank
-                                }
-                            </td>
-                            <td class="initials-cell">@entry.Initials</td>
+                        var entry = leaderboardEntries[i];
+                        <tr>
+                            <td class="rank-cell">#@(i + 1)</td>
+                            <td class="initials-cell">@entry.PlayerInitials</td>
                             <td class="score-cell">@entry.Score</td>
-                            <td class="date-cell">@entry.Date.ToLocalTime().ToString("MM/dd/yyyy")</td>
+                            <td class="date-cell">@entry.Timestamp?.DateTime.ToLocalTime().ToString("MM/dd/yyyy")</td>
                         </tr>
                     }
                 </tbody>
@@ -83,7 +67,7 @@
 
 
 @code {
-    private List<LeaderboardEntry>? leaderboardEntries;
+    private List<HighScore>? leaderboardEntries;
     private bool isLoading = true;
     private string? errorMessage;
     
@@ -99,11 +83,11 @@
             isLoading = true;
             errorMessage = null;
             
-            // Fetch leaderboard data from API
-            leaderboardEntries = await Http.GetFromJsonAsync<List<LeaderboardEntry>>("api/scores");
+            // Fetch top 10 leaderboard data from API
+            leaderboardEntries = await Http.GetFromJsonAsync<List<HighScore>>("api/highscores?count=10");
             
             // If no entries, initialize empty list
-            leaderboardEntries ??= new List<LeaderboardEntry>();
+            leaderboardEntries ??= new List<HighScore>();
         }
         catch (Exception ex)
         {

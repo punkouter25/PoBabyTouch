@@ -1,0 +1,4 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "PoBabyTouchGc.IntegrationTests/bin/Release/net9.0/publish"
+}

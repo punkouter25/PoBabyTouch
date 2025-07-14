@@ -1,0 +1,40 @@
+classDiagram
+    class ITableEntity {
+        <<interface>>
+        +string PartitionKey
+        +string RowKey
+        +DateTimeOffset? Timestamp
+        +ETag ETag
+    }
+
+    class HighScore {
+        +string PlayerInitials
+        +int Score
+        +string GameMode
+        +DateTime ScoreDate
+        +HighScore(gameMode, playerInitials, score)
+    }
+
+    class ScoreEntity {
+        +string PartitionKey
+        +string RowKey
+        +string Initials
+        +int Score
+        +DateTimeOffset? Timestamp
+        +ETag ETag
+    }
+
+    class LeaderboardEntry {
+        +int Rank
+        +string Initials
+        +int Score
+        +DateTime Date
+    }
+
+    class ScoreSubmission {
+        +string Initials
+        +int Score
+    }
+
+    ITableEntity <|-- HighScore
+    ITableEntity <|-- ScoreEntity

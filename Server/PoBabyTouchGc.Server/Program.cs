@@ -32,31 +32,15 @@ Log.Information("Using {StorageType} for Azure Table Storage",
     storageConnectionString == "UseDevelopmentStorage=true" ? "Azurite (local)" : "Azure Storage");
 
 // Configure table storage client
-builder.Services.AddSingleton(implementationFactory => {
-    try 
-    {
-        Log.Information("Initializing Azure Table Storage client");
-        var tableServiceClient = new TableServiceClient(storageConnectionString);
-        // Create the scores table if it doesn't exist
-        var tableClient = tableServiceClient.GetTableClient("Scores");
-        tableClient.CreateIfNotExists();
-        Log.Information("Successfully connected to Azure Table Storage and verified 'Scores' table");
-        return tableClient;
-    }
-    catch (Exception ex)
-    {
-        Log.Error(ex, "Failed to initialize Azure Table Storage client");
-        throw; // Rethrow to prevent application from starting with invalid configuration
-    }
-});
-
 // Register TableServiceClient for high scores
 builder.Services.AddSingleton<TableServiceClient>(implementationFactory => {
     try 
     {
         Log.Information("Initializing Azure TableServiceClient for high scores");
         var tableServiceClient = new TableServiceClient(storageConnectionString);
-        Log.Information("Successfully initialized TableServiceClient");
+        // Ensure the high scores table exists
+        tableServiceClient.GetTableClient("PoBabyTouchGcHighScores").CreateIfNotExists();
+        Log.Information("Successfully initialized TableServiceClient and verified 'PoBabyTouchGcHighScores' table");
         return tableServiceClient;
     }
     catch (Exception ex)
@@ -76,7 +60,6 @@ builder.Services.AddCors(options =>
 });
 
 // Add our custom services
-builder.Services.AddScoped<IScoreService, ScoreService>();
 builder.Services.AddScoped<IHighScoreService, HighScoreService>();
 
 // Configure response compression
@@ -112,3 +95,6 @@ app.MapControllers();
 app.MapFallbackToFile("index.html");
 
 app.Run();
+
+// Make Program class accessible for integration tests
+public partial class Program { }
