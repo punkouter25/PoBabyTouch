@@ -27,7 +27,7 @@ string storageConnectionString = builder.Configuration.GetConnectionString("Azur
     ?? Environment.GetEnvironmentVariable("AzureTableStorage")
     ?? Environment.GetEnvironmentVariable("CUSTOMCONNSTR_AzureTableStorage") // Azure App Service format
     ?? Environment.GetEnvironmentVariable("SQLAZURECONNSTR_AzureTableStorage") // Alternative format
-    ?? (builder.Environment.IsProduction() ? "DefaultEndpointsProtocol=https;AccountName=posharedtablestorage;AccountKey=LPPMW8tZgPJJnYLhCRME+KW4fViv3rJZA+XrycWCjO89yFOMaE2Qi7m3IAkb5dtdD8cR6SFk478b++ASt5ZuqfA==;EndpointSuffix=core.windows.net" : "UseDevelopmentStorage=true"); // Fallback
+    ?? "UseDevelopmentStorage=true"; // Default to Azurite if no connection string provided
 
 Log.Information("Environment: {Environment}", builder.Environment.EnvironmentName);
 Log.Information("Using {StorageType} for Azure Table Storage", 
