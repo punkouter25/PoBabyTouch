@@ -1,1 +1,0 @@
-DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=posharedtablestorage;AccountKey=LPMW8tZgPJJnYLhCRME+KW4fVViv3rJZA+XrycWCjO89yFOMaE2Qi7m3IAkb5dtdD8cR6SFk478b++ASt5ZuqfA==

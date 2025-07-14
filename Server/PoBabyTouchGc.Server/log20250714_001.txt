@@ -1,0 +1,1149 @@
+2025-07-14 11:24:27.816 -04:00 [INF] Environment: Development
+2025-07-14 11:24:27.844 -04:00 [INF] Using Azurite (local) for Azure Table Storage
+2025-07-14 11:24:28.569 -04:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 11:24:28.571 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 11:24:28.571 -04:00 [INF] Hosting environment: Development
+2025-07-14 11:24:28.571 -04:00 [INF] Content root path: C:\Users\punko\Downloads\PoBabyTouch\Server\PoBabyTouchGc.Server
+2025-07-14 11:24:28.713 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 11:24:28.726 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-07-14 11:24:28.742 -04:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:24:28.747 -04:00 [INF] The file /index.html was not modified
+2025-07-14 11:24:28.748 -04:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:24:28.753 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html - 304 null text/html 40.6826ms
+2025-07-14 11:24:28.767 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-07-14 11:24:28.768 -04:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-07-14 11:24:28.769 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 1.946ms
+2025-07-14 11:24:28.769 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/app.css - null null
+2025-07-14 11:24:28.769 -04:00 [INF] The file /css/app.css was not modified
+2025-07-14 11:24:28.769 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - null null
+2025-07-14 11:24:28.769 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/app.css - 304 null text/css 0.2241ms
+2025-07-14 11:24:28.777 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/game.js - null null
+2025-07-14 11:24:28.777 -04:00 [INF] The file /js/game.js was not modified
+2025-07-14 11:24:28.777 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/game.js - 304 null text/javascript 0.5646ms
+2025-07-14 11:24:28.804 -04:00 [INF] Sending file. Request path: '/PoBabyTouchGc.Client.styles.css'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\obj\Debug\net9.0\scopedcss\bundle\PoBabyTouchGc.Client.styles.css'
+2025-07-14 11:24:28.805 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - 200 null text/css 35.8271ms
+2025-07-14 11:24:28.841 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/kim/Recording.m4a - null null
+2025-07-14 11:24:28.841 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/matt/Recording.m4a - null null
+2025-07-14 11:24:28.841 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/nick/Recording.m4a - null null
+2025-07-14 11:24:28.842 -04:00 [INF] The file /sounds/matt/Recording.m4a was not modified
+2025-07-14 11:24:28.842 -04:00 [INF] The file /sounds/nick/Recording.m4a was not modified
+2025-07-14 11:24:28.842 -04:00 [INF] The file /sounds/kim/Recording.m4a was not modified
+2025-07-14 11:24:28.842 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/matt/Recording.m4a - 304 null audio/mp4 1.786ms
+2025-07-14 11:24:28.842 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/nick/Recording.m4a - 304 null audio/mp4 1.3607ms
+2025-07-14 11:24:28.843 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/kim/Recording.m4a - 304 null audio/mp4 2.0389ms
+2025-07-14 11:24:28.844 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - null null
+2025-07-14 11:24:28.856 -04:00 [INF] Sending file. Request path: '/_framework/blazor.boot.json'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json'
+2025-07-14 11:24:28.857 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - 200 null application/json 12.9467ms
+2025-07-14 11:24:28.877 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Client.evho3pgped.pdb - null null
+2025-07-14 11:24:28.877 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Shared.7wike00z9j.pdb - null null
+2025-07-14 11:24:28.900 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Shared.7wike00z9j.pdb.gz'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\obj\Debug\net9.0\compressed\n9qr01n65b-7wike00z9j.gz'
+2025-07-14 11:24:28.900 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Shared.7wike00z9j.pdb.gz - 200 7589 application/octet-stream 23.1269ms
+2025-07-14 11:24:28.900 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Client.evho3pgped.pdb.gz'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\obj\Debug\net9.0\compressed\zwh1ayx5do-evho3pgped.gz'
+2025-07-14 11:24:28.901 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Client.evho3pgped.pdb.gz - 200 44708 application/octet-stream 24.2669ms
+2025-07-14 11:24:28.924 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Client.o2qj96czey.wasm - null null
+2025-07-14 11:24:28.924 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Shared.3cl3ec94re.wasm - null null
+2025-07-14 11:24:28.933 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Client.o2qj96czey.wasm'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\PoBabyTouchGc.Client.o2qj96czey.wasm'
+2025-07-14 11:24:28.933 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Shared.3cl3ec94re.wasm'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\PoBabyTouchGc.Shared.3cl3ec94re.wasm'
+2025-07-14 11:24:28.933 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Client.o2qj96czey.wasm - 200 null application/wasm 9.5366ms
+2025-07-14 11:24:28.933 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Shared.3cl3ec94re.wasm - 200 null application/wasm 9.657ms
+2025-07-14 11:24:29.259 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor-hotreload - null null
+2025-07-14 11:24:29.260 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor-hotreload - 204 null null 1.198ms
+2025-07-14 11:24:55.325 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.png - null null
+2025-07-14 11:24:55.326 -04:00 [INF] The file /favicon.png was not modified
+2025-07-14 11:24:55.326 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.png - 304 null image/png 1.2292ms
+2025-07-14 11:24:57.498 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/highscores/check/2 - null null
+2025-07-14 11:24:57.500 -04:00 [INF] Executing endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.IsHighScore (PoBabyTouchGc.Server)'
+2025-07-14 11:24:57.519 -04:00 [INF] Route matched with {action = "IsHighScore", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] IsHighScore(Int32, System.String) on controller PoBabyTouchGc.Server.Controllers.HighScoresController (PoBabyTouchGc.Server).
+2025-07-14 11:24:57.521 -04:00 [INF] Initializing Azure TableServiceClient for high scores
+2025-07-14 11:24:59.958 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/highscores - application/json; charset=utf-8 55
+2025-07-14 11:24:59.959 -04:00 [INF] CORS policy execution successful.
+2025-07-14 11:24:59.961 -04:00 [INF] Executing endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.SaveHighScore (PoBabyTouchGc.Server)'
+2025-07-14 11:24:59.963 -04:00 [INF] Route matched with {action = "SaveHighScore", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] SaveHighScore(PoBabyTouchGc.Shared.Models.SaveHighScoreRequest) on controller PoBabyTouchGc.Server.Controllers.HighScoresController (PoBabyTouchGc.Server).
+2025-07-14 11:25:04.939 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - null null
+2025-07-14 11:25:04.940 -04:00 [INF] The file /PoBabyTouchGc.Client.styles.css was not modified
+2025-07-14 11:25:04.940 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - 304 null text/css 1.6029ms
+2025-07-14 11:25:04.947 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-07-14 11:25:04.948 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 1.3684ms
+2025-07-14 11:25:04.949 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-07-14 11:25:05.000 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.min.css.map - null null
+2025-07-14 11:25:05.000 -04:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css.map was not modified
+2025-07-14 11:25:05.000 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.min.css.map - 304 null text/plain 0.884ms
+2025-07-14 11:25:05.006 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/dotnet.runtime.js.map - null null
+2025-07-14 11:25:05.006 -04:00 [INF] The file /_framework/dotnet.runtime.js.map was not modified
+2025-07-14 11:25:05.006 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/dotnet.js.map - null null
+2025-07-14 11:25:05.006 -04:00 [INF] The file /_framework/dotnet.js.map was not modified
+2025-07-14 11:25:05.006 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/dotnet.js.map - 304 null text/plain 0.1652ms
+2025-07-14 11:25:05.006 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/dotnet.runtime.js.map - 304 null text/plain 0.4938ms
+2025-07-14 11:25:11.658 -04:00 [ERR] Failed to initialize TableServiceClient
+System.AggregateException: Retry failed after 4 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002))
+ ---> Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RetryPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipeline.Send(HttpMessage message, CancellationToken cancellationToken)
+   at Azure.Core.HttpPipelineExtensions.ProcessMessage(HttpPipeline pipeline, HttpMessage message, RequestContext requestContext, CancellationToken cancellationToken)
+   at Azure.Data.Tables.TableRestClient.Create(RequestContent content, String format, String responsePreference, RequestContext context)
+   at Azure.Data.Tables.TableClient.CreateIfNotExists(CancellationToken cancellationToken)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__0(IServiceProvider implementationFactory) in C:\Users\punko\Downloads\PoBabyTouch\Server\PoBabyTouchGc.Server\Program.cs:line 42
+ ---> (Inner Exception #1) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+ ---> (Inner Exception #2) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+ ---> (Inner Exception #3) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+2025-07-14 11:25:11.741 -04:00 [INF] Initializing Azure TableServiceClient for high scores
+2025-07-14 11:25:11.751 -04:00 [INF] Executed action PoBabyTouchGc.Server.Controllers.HighScoresController.IsHighScore (PoBabyTouchGc.Server) in 14221.9505ms
+2025-07-14 11:25:11.751 -04:00 [INF] Executed endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.IsHighScore (PoBabyTouchGc.Server)'
+2025-07-14 11:25:11.756 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.AggregateException: Retry failed after 4 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002))
+ ---> Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RetryPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipeline.Send(HttpMessage message, CancellationToken cancellationToken)
+   at Azure.Core.HttpPipelineExtensions.ProcessMessage(HttpPipeline pipeline, HttpMessage message, RequestContext requestContext, CancellationToken cancellationToken)
+   at Azure.Data.Tables.TableRestClient.Create(RequestContent content, String format, String responsePreference, RequestContext context)
+   at Azure.Data.Tables.TableClient.CreateIfNotExists(CancellationToken cancellationToken)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__0(IServiceProvider implementationFactory) in C:\Users\punko\Downloads\PoBabyTouch\Server\PoBabyTouchGc.Server\Program.cs:line 42
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method9(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ ---> (Inner Exception #1) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+ ---> (Inner Exception #2) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+ ---> (Inner Exception #3) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+2025-07-14 11:25:11.873 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/highscores/check/2 - 500 null text/plain; charset=utf-8 14375.2395ms
+2025-07-14 11:25:25.723 -04:00 [ERR] Failed to initialize TableServiceClient
+System.AggregateException: Retry failed after 4 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002))
+ ---> Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RetryPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipeline.Send(HttpMessage message, CancellationToken cancellationToken)
+   at Azure.Core.HttpPipelineExtensions.ProcessMessage(HttpPipeline pipeline, HttpMessage message, RequestContext requestContext, CancellationToken cancellationToken)
+   at Azure.Data.Tables.TableRestClient.Create(RequestContent content, String format, String responsePreference, RequestContext context)
+   at Azure.Data.Tables.TableClient.CreateIfNotExists(CancellationToken cancellationToken)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__0(IServiceProvider implementationFactory) in C:\Users\punko\Downloads\PoBabyTouch\Server\PoBabyTouchGc.Server\Program.cs:line 42
+ ---> (Inner Exception #1) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+ ---> (Inner Exception #2) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+ ---> (Inner Exception #3) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+2025-07-14 11:25:25.742 -04:00 [INF] Executed action PoBabyTouchGc.Server.Controllers.HighScoresController.SaveHighScore (PoBabyTouchGc.Server) in 25777.8865ms
+2025-07-14 11:25:25.742 -04:00 [INF] Executed endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.SaveHighScore (PoBabyTouchGc.Server)'
+2025-07-14 11:25:25.742 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.AggregateException: Retry failed after 4 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002))
+ ---> Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RetryPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipeline.Send(HttpMessage message, CancellationToken cancellationToken)
+   at Azure.Core.HttpPipelineExtensions.ProcessMessage(HttpPipeline pipeline, HttpMessage message, RequestContext requestContext, CancellationToken cancellationToken)
+   at Azure.Data.Tables.TableRestClient.Create(RequestContent content, String format, String responsePreference, RequestContext context)
+   at Azure.Data.Tables.TableClient.CreateIfNotExists(CancellationToken cancellationToken)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__0(IServiceProvider implementationFactory) in C:\Users\punko\Downloads\PoBabyTouch\Server\PoBabyTouchGc.Server\Program.cs:line 42
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method17(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ ---> (Inner Exception #1) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+ ---> (Inner Exception #2) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+ ---> (Inner Exception #3) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+2025-07-14 11:25:25.799 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/highscores - 500 null text/plain; charset=utf-8 25840.7903ms
+2025-07-14 11:26:08.313 -04:00 [INF] Environment: Development
+2025-07-14 11:26:08.341 -04:00 [INF] Using Azurite (local) for Azure Table Storage
+2025-07-14 11:26:08.425 -04:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 11:26:08.431 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 11:26:08.432 -04:00 [INF] Hosting environment: Development
+2025-07-14 11:26:08.432 -04:00 [INF] Content root path: C:\Users\punko\Downloads\PoBabyTouch\Server\PoBabyTouchGc.Server
+2025-07-14 11:26:59.327 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/?id=6bccdfef-873c-43d4-849f-9df6fecb5dda&vscodeBrowserReqId=1752506819299 - null null
+2025-07-14 11:26:59.333 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-07-14 11:26:59.340 -04:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:26:59.352 -04:00 [INF] Sending file. Request path: '/index.html'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\index.html'
+2025-07-14 11:26:59.353 -04:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:26:59.355 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html?id=6bccdfef-873c-43d4-849f-9df6fecb5dda&vscodeBrowserReqId=1752506819299 - 200 null text/html 29.6533ms
+2025-07-14 11:26:59.408 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-07-14 11:26:59.410 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/app.css - null null
+2025-07-14 11:26:59.410 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/game.js - null null
+2025-07-14 11:26:59.410 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - null null
+2025-07-14 11:26:59.411 -04:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-07-14 11:26:59.412 -04:00 [INF] The file /css/app.css was not modified
+2025-07-14 11:26:59.413 -04:00 [INF] The file /js/game.js was not modified
+2025-07-14 11:26:59.416 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 8.296ms
+2025-07-14 11:26:59.416 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/app.css - 304 null text/css 6.5626ms
+2025-07-14 11:26:59.417 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/game.js - 304 null text/javascript 7.341ms
+2025-07-14 11:26:59.419 -04:00 [INF] Sending file. Request path: '/PoBabyTouchGc.Client.styles.css'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\obj\Debug\net9.0\scopedcss\bundle\PoBabyTouchGc.Client.styles.css'
+2025-07-14 11:26:59.424 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - 200 null text/css 14.1047ms
+2025-07-14 11:26:59.460 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/kim/Recording.m4a - null null
+2025-07-14 11:26:59.460 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/matt/Recording.m4a - null null
+2025-07-14 11:26:59.460 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/nick/Recording.m4a - null null
+2025-07-14 11:26:59.463 -04:00 [INF] The file /sounds/matt/Recording.m4a was not modified
+2025-07-14 11:26:59.463 -04:00 [INF] The file /sounds/kim/Recording.m4a was not modified
+2025-07-14 11:26:59.464 -04:00 [INF] The file /sounds/nick/Recording.m4a was not modified
+2025-07-14 11:26:59.464 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - null null
+2025-07-14 11:26:59.464 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/matt/Recording.m4a - 304 null audio/mp4 4.1082ms
+2025-07-14 11:26:59.464 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/kim/Recording.m4a - 304 null audio/mp4 4.3502ms
+2025-07-14 11:26:59.465 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/nick/Recording.m4a - 304 null audio/mp4 4.614ms
+2025-07-14 11:26:59.476 -04:00 [INF] Sending file. Request path: '/_framework/blazor.boot.json'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json'
+2025-07-14 11:26:59.478 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - 200 null application/json 13.5637ms
+2025-07-14 11:26:59.538 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Shared.7wike00z9j.pdb - null null
+2025-07-14 11:26:59.540 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Client.evho3pgped.pdb - null null
+2025-07-14 11:26:59.553 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Shared.7wike00z9j.pdb.gz'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\obj\Debug\net9.0\compressed\n9qr01n65b-7wike00z9j.gz'
+2025-07-14 11:26:59.553 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Client.evho3pgped.pdb.gz'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\obj\Debug\net9.0\compressed\zwh1ayx5do-evho3pgped.gz'
+2025-07-14 11:26:59.555 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Shared.7wike00z9j.pdb.gz - 200 7589 application/octet-stream 17.0521ms
+2025-07-14 11:26:59.555 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Client.evho3pgped.pdb.gz - 200 44708 application/octet-stream 15.1968ms
+2025-07-14 11:26:59.612 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Shared.3cl3ec94re.wasm - null null
+2025-07-14 11:26:59.612 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Client.o2qj96czey.wasm - null null
+2025-07-14 11:26:59.614 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Shared.3cl3ec94re.wasm'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\PoBabyTouchGc.Shared.3cl3ec94re.wasm'
+2025-07-14 11:26:59.615 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Shared.3cl3ec94re.wasm - 200 null application/wasm 3.6305ms
+2025-07-14 11:26:59.616 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Client.o2qj96czey.wasm'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\PoBabyTouchGc.Client.o2qj96czey.wasm'
+2025-07-14 11:26:59.618 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Client.o2qj96czey.wasm - 200 null application/wasm 5.849ms
+2025-07-14 11:29:26.056 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/diag?id=6bccdfef-873c-43d4-849f-9df6fecb5dda&vscodeBrowserReqId=1752506966047 - null null
+2025-07-14 11:29:26.059 -04:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:29:26.061 -04:00 [INF] Sending file. Request path: '/index.html'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\index.html'
+2025-07-14 11:29:26.062 -04:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:29:26.063 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html?id=6bccdfef-873c-43d4-849f-9df6fecb5dda&vscodeBrowserReqId=1752506966047 - 200 null text/html 7.4822ms
+2025-07-14 11:29:26.077 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - null null
+2025-07-14 11:29:26.079 -04:00 [INF] The file /PoBabyTouchGc.Client.styles.css was not modified
+2025-07-14 11:29:26.080 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - 304 null text/css 2.675ms
+2025-07-14 11:29:26.091 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - null null
+2025-07-14 11:29:26.092 -04:00 [INF] The file /_framework/blazor.boot.json was not modified
+2025-07-14 11:29:26.093 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - 304 null application/json 1.7344ms
+2025-07-14 11:29:26.963 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scores - null null
+2025-07-14 11:29:26.965 -04:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:29:26.966 -04:00 [INF] Sending file. Request path: '/index.html'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\index.html'
+2025-07-14 11:29:26.966 -04:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:29:26.968 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html - 200 null text/html 4.8783ms
+2025-07-14 11:29:27.290 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/highscores - null null
+2025-07-14 11:29:27.293 -04:00 [INF] Executing endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
+2025-07-14 11:29:27.306 -04:00 [INF] Route matched with {action = "GetTopScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PoBabyTouchGc.Shared.Models.HighScore]]] GetTopScores(Int32, System.String) on controller PoBabyTouchGc.Server.Controllers.HighScoresController (PoBabyTouchGc.Server).
+2025-07-14 11:29:27.308 -04:00 [INF] Initializing Azure TableServiceClient for high scores
+2025-07-14 11:29:27.403 -04:00 [INF] Successfully initialized TableServiceClient and verified 'PoBabyTouchGcHighScores' table
+2025-07-14 11:29:27.568 -04:00 [INF] Retrieved 0 high scores for Default mode
+2025-07-14 11:29:27.572 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoBabyTouchGc.Shared.Models.HighScore, PoBabyTouchGc.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-14 11:29:27.584 -04:00 [INF] Executed action PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server) in 275.3952ms
+2025-07-14 11:29:27.590 -04:00 [INF] Executed endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
+2025-07-14 11:29:27.591 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/highscores - 200 null application/json; charset=utf-8 301.5636ms
+2025-07-14 11:39:45.622 -04:00 [INF] Environment: Development
+2025-07-14 11:39:45.650 -04:00 [INF] Using Azurite (local) for Azure Table Storage
+2025-07-14 11:39:45.733 -04:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 11:39:45.735 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 11:39:45.736 -04:00 [INF] Hosting environment: Development
+2025-07-14 11:39:45.736 -04:00 [INF] Content root path: C:\Users\punko\Downloads\PoBabyTouch\Server\PoBabyTouchGc.Server
+2025-07-14 11:40:01.225 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/?id=6f92c7ef-bb72-4a96-8f40-c8c4188d6818&vscodeBrowserReqId=1752507601198 - null null
+2025-07-14 11:40:01.231 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-07-14 11:40:01.242 -04:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:40:01.255 -04:00 [INF] Sending file. Request path: '/index.html'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\index.html'
+2025-07-14 11:40:01.256 -04:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:40:01.258 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html?id=6f92c7ef-bb72-4a96-8f40-c8c4188d6818&vscodeBrowserReqId=1752507601198 - 200 null text/html 34.4201ms
+2025-07-14 11:40:01.301 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - null null
+2025-07-14 11:40:01.304 -04:00 [INF] The file /PoBabyTouchGc.Client.styles.css was not modified
+2025-07-14 11:40:01.304 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - 304 null text/css 3.4109ms
+2025-07-14 11:40:01.357 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - null null
+2025-07-14 11:40:01.381 -04:00 [INF] Sending file. Request path: '/_framework/blazor.boot.json'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json'
+2025-07-14 11:40:01.385 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - 200 null application/json 29.1654ms
+2025-07-14 11:40:06.420 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/diag?id=6f92c7ef-bb72-4a96-8f40-c8c4188d6818&vscodeBrowserReqId=1752507606412 - null null
+2025-07-14 11:40:06.423 -04:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:40:06.425 -04:00 [INF] Sending file. Request path: '/index.html'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\index.html'
+2025-07-14 11:40:06.426 -04:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:40:06.428 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html?id=6f92c7ef-bb72-4a96-8f40-c8c4188d6818&vscodeBrowserReqId=1752507606412 - 200 null text/html 7.5621ms
+2025-07-14 11:40:06.444 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - null null
+2025-07-14 11:40:06.446 -04:00 [INF] The file /_framework/blazor.boot.json was not modified
+2025-07-14 11:40:06.446 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - 304 null application/json 2.0084ms
+2025-07-14 11:40:07.586 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/highscores - null null
+2025-07-14 11:40:07.590 -04:00 [INF] Executing endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
+2025-07-14 11:40:07.604 -04:00 [INF] Route matched with {action = "GetTopScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PoBabyTouchGc.Shared.Models.HighScore]]] GetTopScores(Int32, System.String) on controller PoBabyTouchGc.Server.Controllers.HighScoresController (PoBabyTouchGc.Server).
+2025-07-14 11:40:07.605 -04:00 [INF] Initializing Azure TableServiceClient for high scores
+2025-07-14 11:40:07.710 -04:00 [INF] Successfully initialized TableServiceClient and verified 'PoBabyTouchGcHighScores' table
+2025-07-14 11:40:07.789 -04:00 [INF] Retrieved 3 high scores for Default mode
+2025-07-14 11:40:07.792 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoBabyTouchGc.Shared.Models.HighScore, PoBabyTouchGc.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-14 11:40:07.808 -04:00 [INF] Executed action PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server) in 201.3831ms
+2025-07-14 11:40:07.809 -04:00 [INF] Executed endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
+2025-07-14 11:40:07.812 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/highscores - 200 null application/json; charset=utf-8 225.5193ms
+2025-07-14 11:43:54.002 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 11:43:54.005 -04:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:43:54.007 -04:00 [INF] Sending file. Request path: '/index.html'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\index.html'
+2025-07-14 11:43:54.033 -04:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:43:54.033 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-07-14 11:43:54.034 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/app.css - null null
+2025-07-14 11:43:54.036 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - null null
+2025-07-14 11:43:54.036 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor.webassembly.js - null null
+2025-07-14 11:43:54.036 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html - 200 null text/html 34.1719ms
+2025-07-14 11:43:54.038 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/game.js - null null
+2025-07-14 11:43:54.042 -04:00 [INF] Sending file. Request path: '/css/app.css'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\css\app.css'
+2025-07-14 11:43:54.046 -04:00 [INF] Sending file. Request path: '/PoBabyTouchGc.Client.styles.css'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\obj\Debug\net9.0\scopedcss\bundle\PoBabyTouchGc.Client.styles.css'
+2025-07-14 11:43:54.048 -04:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2025-07-14 11:43:54.054 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-07-14 11:43:54.056 -04:00 [INF] Sending file. Request path: '/js/game.js'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\js\game.js'
+2025-07-14 11:43:54.057 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/app.css - 200 null text/css 22.1731ms
+2025-07-14 11:43:54.057 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - 200 null text/css 21.6683ms
+2025-07-14 11:43:54.058 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.min.css - 200 null text/css 24.9806ms
+2025-07-14 11:43:54.060 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/game.js - 200 null text/javascript 22.2928ms
+2025-07-14 11:43:54.061 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 6.57ms
+2025-07-14 11:43:54.067 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-07-14 11:43:54.092 -04:00 [INF] Sending file. Request path: '/_framework/blazor.webassembly.js'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\blazor.webassembly.js'
+2025-07-14 11:43:54.094 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor.webassembly.js - 200 null text/javascript 57.7824ms
+2025-07-14 11:43:54.150 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/dotnet.js - null null
+2025-07-14 11:43:54.152 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/matt/Recording.m4a - null null
+2025-07-14 11:43:54.152 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/kim/Recording.m4a - null null
+2025-07-14 11:43:54.152 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/nick/Recording.m4a - null null
+2025-07-14 11:43:54.159 -04:00 [INF] Sending ["bytes 0-54943/54944"] of file C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\sounds\nick\Recording.m4a
+2025-07-14 11:43:54.159 -04:00 [INF] Sending ["bytes 0-54943/54944"] of file C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\sounds\matt\Recording.m4a
+2025-07-14 11:43:54.159 -04:00 [INF] Sending ["bytes 0-54943/54944"] of file C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\sounds\kim\Recording.m4a
+2025-07-14 11:43:54.171 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/nick/Recording.m4a - 206 54944 audio/mp4 18.7628ms
+2025-07-14 11:43:54.176 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/matt/Recording.m4a - 206 54944 audio/mp4 23.2674ms
+2025-07-14 11:43:54.176 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/kim/Recording.m4a - 206 54944 audio/mp4 24.5171ms
+2025-07-14 11:43:54.206 -04:00 [INF] Sending file. Request path: '/_framework/dotnet.js'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\dotnet.js'
+2025-07-14 11:43:54.208 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/dotnet.js - 200 null text/javascript 57.5092ms
+2025-07-14 11:43:54.216 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - null null
+2025-07-14 11:43:54.218 -04:00 [INF] Sending file. Request path: '/_framework/blazor.boot.json'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json'
+2025-07-14 11:43:54.219 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - 200 null application/json 3.5202ms
+2025-07-14 11:43:54.224 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/dotnet.runtime.593bvuk5yc.js - null null
+2025-07-14 11:43:54.224 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/dotnet.native.st0ovrfdhi.js - null null
+2025-07-14 11:43:54.289 -04:00 [INF] Sending file. Request path: '/_framework/dotnet.runtime.593bvuk5yc.js'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\dotnet.runtime.593bvuk5yc.js'
+2025-07-14 11:43:54.290 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/dotnet.runtime.593bvuk5yc.js - 200 null text/javascript 66.6458ms
+2025-07-14 11:43:54.336 -04:00 [INF] Sending file. Request path: '/_framework/dotnet.native.st0ovrfdhi.js'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\dotnet.native.st0ovrfdhi.js'
+2025-07-14 11:43:54.337 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/dotnet.native.st0ovrfdhi.js - 200 null text/javascript 113.4937ms
+2025-07-14 11:43:54.925 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.png - null null
+2025-07-14 11:43:54.933 -04:00 [INF] Sending file. Request path: '/favicon.png'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\favicon.png'
+2025-07-14 11:43:54.937 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.png - 200 1148 image/png 11.8886ms
+2025-07-14 11:43:56.997 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/highscores?count=10 - null null
+2025-07-14 11:43:57.004 -04:00 [INF] Executing endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
+2025-07-14 11:43:57.005 -04:00 [INF] Route matched with {action = "GetTopScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PoBabyTouchGc.Shared.Models.HighScore]]] GetTopScores(Int32, System.String) on controller PoBabyTouchGc.Server.Controllers.HighScoresController (PoBabyTouchGc.Server).
+2025-07-14 11:43:57.078 -04:00 [INF] Retrieved 3 high scores for Default mode
+2025-07-14 11:43:57.079 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoBabyTouchGc.Shared.Models.HighScore, PoBabyTouchGc.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-14 11:43:57.080 -04:00 [INF] Executed action PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server) in 71.0308ms
+2025-07-14 11:43:57.082 -04:00 [INF] Executed endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
+2025-07-14 11:43:57.082 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/highscores?count=10 - 200 null application/json; charset=utf-8 85.4847ms
+2025-07-14 11:44:03.387 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/highscores/check/3 - null null
+2025-07-14 11:44:03.403 -04:00 [INF] Executing endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.IsHighScore (PoBabyTouchGc.Server)'
+2025-07-14 11:44:03.440 -04:00 [INF] Route matched with {action = "IsHighScore", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] IsHighScore(Int32, System.String) on controller PoBabyTouchGc.Server.Controllers.HighScoresController (PoBabyTouchGc.Server).
+2025-07-14 11:44:03.479 -04:00 [INF] Retrieved 3 high scores for Default mode
+2025-07-14 11:44:03.487 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-07-14 11:44:03.491 -04:00 [INF] Executed action PoBabyTouchGc.Server.Controllers.HighScoresController.IsHighScore (PoBabyTouchGc.Server) in 46.4981ms
+2025-07-14 11:44:03.491 -04:00 [INF] Executed endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.IsHighScore (PoBabyTouchGc.Server)'
+2025-07-14 11:44:03.492 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/highscores/check/3 - 200 null application/json; charset=utf-8 104.238ms
+2025-07-14 11:44:07.063 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/highscores - application/json; charset=utf-8 55
+2025-07-14 11:44:07.086 -04:00 [INF] CORS policy execution successful.
+2025-07-14 11:44:07.088 -04:00 [INF] Executing endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.SaveHighScore (PoBabyTouchGc.Server)'
+2025-07-14 11:44:07.091 -04:00 [INF] Route matched with {action = "SaveHighScore", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] SaveHighScore(PoBabyTouchGc.Shared.Models.SaveHighScoreRequest) on controller PoBabyTouchGc.Server.Controllers.HighScoresController (PoBabyTouchGc.Server).
+2025-07-14 11:44:07.141 -04:00 [INF] High score saved successfully: EFE - 3 points
+2025-07-14 11:44:07.142 -04:00 [INF] High score saved successfully: EFE - 3 points
+2025-07-14 11:44:07.143 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 11:44:07.146 -04:00 [INF] Executed action PoBabyTouchGc.Server.Controllers.HighScoresController.SaveHighScore (PoBabyTouchGc.Server) in 54.4225ms
+2025-07-14 11:44:07.147 -04:00 [INF] Executed endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.SaveHighScore (PoBabyTouchGc.Server)'
+2025-07-14 11:44:07.148 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/highscores - 200 null application/json; charset=utf-8 84.7345ms
+2025-07-14 11:44:09.198 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/highscores?count=10 - null null
+2025-07-14 11:44:09.204 -04:00 [INF] Executing endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
+2025-07-14 11:44:09.205 -04:00 [INF] Route matched with {action = "GetTopScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PoBabyTouchGc.Shared.Models.HighScore]]] GetTopScores(Int32, System.String) on controller PoBabyTouchGc.Server.Controllers.HighScoresController (PoBabyTouchGc.Server).
+2025-07-14 11:44:09.240 -04:00 [INF] Retrieved 4 high scores for Default mode
+2025-07-14 11:44:09.241 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoBabyTouchGc.Shared.Models.HighScore, PoBabyTouchGc.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-14 11:44:09.243 -04:00 [INF] Executed action PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server) in 36.6295ms
+2025-07-14 11:44:09.246 -04:00 [INF] Executed endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
+2025-07-14 11:44:09.247 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/highscores?count=10 - 200 null application/json; charset=utf-8 53.6286ms
+2025-07-14 11:44:17.243 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/highscores?count=10 - null null
+2025-07-14 11:44:17.246 -04:00 [INF] Executing endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
+2025-07-14 11:44:17.246 -04:00 [INF] Route matched with {action = "GetTopScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PoBabyTouchGc.Shared.Models.HighScore]]] GetTopScores(Int32, System.String) on controller PoBabyTouchGc.Server.Controllers.HighScoresController (PoBabyTouchGc.Server).
+2025-07-14 11:44:17.266 -04:00 [INF] Retrieved 4 high scores for Default mode
+2025-07-14 11:44:17.267 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoBabyTouchGc.Shared.Models.HighScore, PoBabyTouchGc.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-14 11:44:17.270 -04:00 [INF] Executed action PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server) in 23.7602ms
+2025-07-14 11:44:17.272 -04:00 [INF] Executed endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
+2025-07-14 11:44:17.272 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/highscores?count=10 - 200 null application/json; charset=utf-8 29.6633ms
+2025-07-14 11:44:36.479 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/diag?id=6f92c7ef-bb72-4a96-8f40-c8c4188d6818&vscodeBrowserReqId=1752507876452 - null null
+2025-07-14 11:44:36.481 -04:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:44:36.483 -04:00 [INF] Sending file. Request path: '/index.html'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\index.html'
+2025-07-14 11:44:36.484 -04:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-07-14 11:44:36.486 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html?id=6f92c7ef-bb72-4a96-8f40-c8c4188d6818&vscodeBrowserReqId=1752507876452 - 200 null text/html 6.3211ms
+2025-07-14 11:44:36.519 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - null null
+2025-07-14 11:44:36.521 -04:00 [INF] The file /PoBabyTouchGc.Client.styles.css was not modified
+2025-07-14 11:44:36.524 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - 304 null text/css 5.2131ms
+2025-07-14 11:44:36.533 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - null null
+2025-07-14 11:44:36.542 -04:00 [INF] The file /_framework/blazor.boot.json was not modified
+2025-07-14 11:44:36.543 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - 304 null application/json 10.4322ms
+2025-07-14 11:44:37.491 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/highscores - null null
+2025-07-14 11:44:37.494 -04:00 [INF] Executing endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
+2025-07-14 11:44:37.495 -04:00 [INF] Route matched with {action = "GetTopScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PoBabyTouchGc.Shared.Models.HighScore]]] GetTopScores(Int32, System.String) on controller PoBabyTouchGc.Server.Controllers.HighScoresController (PoBabyTouchGc.Server).
+2025-07-14 11:44:37.510 -04:00 [INF] Retrieved 4 high scores for Default mode
+2025-07-14 11:44:37.511 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoBabyTouchGc.Shared.Models.HighScore, PoBabyTouchGc.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-14 11:44:37.512 -04:00 [INF] Executed action PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server) in 16.708ms
+2025-07-14 11:44:37.512 -04:00 [INF] Executed endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
+2025-07-14 11:44:37.513 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/highscores - 200 null application/json; charset=utf-8 21.0912ms

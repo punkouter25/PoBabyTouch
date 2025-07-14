@@ -124,6 +124,27 @@ namespace PoBabyTouchGc.Server.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
+        /// <summary>
+        /// Test endpoint for diagnostics - checks if the service is working
+        /// </summary>
+        [HttpGet("test")]
+        public async Task<ActionResult> TestConnection()
+        {
+            try
+            {
+                _logger.LogDebug("Testing high score service connection");
+                
+                // Try to get top scores as a simple test
+                var scores = await _highScoreService.GetTopScoresAsync(1, "Default");
+                return Ok(new { status = "connected", message = "High score service is working", scoresCount = scores.Count });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "High score service test failed");
+                return StatusCode(500, new { status = "error", message = ex.Message });
+            }
+        }
     }
 
 }

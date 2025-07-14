@@ -1,0 +1,65 @@
+name: Build and deploy ASP.Net Core app to Azure Web App - PoBabyTouch
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+
+    - name: Clean solution
+      run: dotnet clean PoBabyTouchGc.sln --configuration Release
+
+    - name: Clean obj and bin directories
+      run: |
+        Get-ChildItem -Path . -Recurse -Directory -Name "obj" | ForEach-Object { Remove-Item -Path $_ -Recurse -Force -ErrorAction SilentlyContinue }
+        Get-ChildItem -Path . -Recurse -Directory -Name "bin" | ForEach-Object { Remove-Item -Path $_ -Recurse -Force -ErrorAction SilentlyContinue }
+        Get-ChildItem -Path . -Recurse -Directory -Name "compressed" | ForEach-Object { Remove-Item -Path $_ -Recurse -Force -ErrorAction SilentlyContinue }
+
+    - name: Restore dependencies
+      run: dotnet restore PoBabyTouchGc.sln --verbosity normal
+
+    - name: Build solution
+      run: dotnet build PoBabyTouchGc.sln --configuration Release --no-restore --verbosity normal
+
+    - name: Publish server project
+      run: dotnet publish Server/PoBabyTouchGc.Server/PoBabyTouchGc.Server.csproj --configuration Release --output ./publish --no-build --verbosity normal
+
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v4
+      with:
+        name: .net-app
+        path: ./publish
+
+  deploy:
+    runs-on: windows-latest
+    needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v4
+      with:
+        name: .net-app
+
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v3
+      with:
+        app-name: 'PoBabyTouch'
+        slot-name: 'Production'
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_PoBabyTouch }}
+        package: .

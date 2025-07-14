@@ -1,6 +1,0 @@
-@PoBabyTouchGc.Server_HostAddress = http://localhost:5127
-
-GET {{PoBabyTouchGc.Server_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
