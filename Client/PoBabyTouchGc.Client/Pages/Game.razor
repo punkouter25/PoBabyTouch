@@ -47,22 +47,18 @@
             <div class="high-score-content @(showSuccessAnimation ? "success-animation" : "")">
                 @if (!showSuccessAnimation)
                 {
-                    <h2>🎉 New High Score! 🎉</h2>
-                    <p class="score-display">Your score: <span class="score-value">@GameStateService.CurrentScore</span></p>
+                    <h2>🎉 NEW HIGH SCORE! 🎉</h2>
+                    <p>Your score: <span class="score-value">@GameStateService.CurrentScore</span></p>
                     <p>Enter your initials (3 letters):</p>
                     <input type="text" 
                            maxlength="3" 
                            @bind="playerInitials" 
                            @oninput="HandleInitialsInput" 
                            placeholder="ABC"
-                           class="initials-input"
+                           class="simple-initials-input"
                            autofocus />
-                    <div class="initials-display">
-                        <span class="initials-text">@playerInitials</span>
-                        <span class="cursor-blink">_</span>
-                    </div>
                     <div class="button-group">
-                        <button class="cancel-button" @onclick="CancelHighScore">Skip</button>
+                        <button class="skip-button" @onclick="CancelHighScore">SKIP</button>
                     </div>
                 }
                 else

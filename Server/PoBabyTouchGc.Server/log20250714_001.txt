@@ -1147,3 +1147,144 @@ System.AggregateException: Retry failed after 4 tries. Retry settings can be adj
 2025-07-14 11:44:37.512 -04:00 [INF] Executed action PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server) in 16.708ms
 2025-07-14 11:44:37.512 -04:00 [INF] Executed endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
 2025-07-14 11:44:37.513 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/highscores - 200 null application/json; charset=utf-8 21.0912ms
+2025-07-14 20:28:47.516 -04:00 [INF] Environment: Development
+2025-07-14 20:28:47.543 -04:00 [INF] Using Azurite (local) for Azure Table Storage
+2025-07-14 20:28:48.527 -04:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 20:28:48.527 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 20:28:48.528 -04:00 [INF] Hosting environment: Development
+2025-07-14 20:28:48.528 -04:00 [INF] Content root path: C:\Users\punko\Downloads\PoBabyTouch\Server\PoBabyTouchGc.Server
+2025-07-14 20:28:48.741 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 20:28:48.751 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-07-14 20:28:48.761 -04:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-07-14 20:28:48.787 -04:00 [INF] Sending file. Request path: '/index.html'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\index.html'
+2025-07-14 20:28:48.788 -04:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-07-14 20:28:48.792 -04:00 [WRN] Unable to configure browser refresh script injection on the response. This may have been caused by the response's Content-Encoding: '["br"]'. Consider disabling response compression.
+2025-07-14 20:28:48.804 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor.webassembly.js - null null
+2025-07-14 20:28:48.804 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/app.css - null null
+2025-07-14 20:28:48.804 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - null null
+2025-07-14 20:28:48.795 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html - 200 null text/html 56.6618ms
+2025-07-14 20:28:48.808 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-07-14 20:28:48.808 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/game.js - null null
+2025-07-14 20:28:48.811 -04:00 [INF] Sending file. Request path: '/css/app.css'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\css\app.css'
+2025-07-14 20:28:48.811 -04:00 [INF] Sending file. Request path: '/PoBabyTouchGc.Client.styles.css'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\obj\Debug\net9.0\scopedcss\bundle\PoBabyTouchGc.Client.styles.css'
+2025-07-14 20:28:48.811 -04:00 [INF] Sending file. Request path: '/js/game.js'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\js\game.js'
+2025-07-14 20:28:48.814 -04:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2025-07-14 20:28:48.814 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/game.js - 200 null text/javascript 4.4998ms
+2025-07-14 20:28:48.814 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.min.css - 200 null text/css 5.8458ms
+2025-07-14 20:28:48.814 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - 200 null text/css 10.0466ms
+2025-07-14 20:28:48.821 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/app.css - 200 null text/css 17.3299ms
+2025-07-14 20:28:48.823 -04:00 [INF] Sending file. Request path: '/_framework/blazor.webassembly.js'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\blazor.webassembly.js'
+2025-07-14 20:28:48.823 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor.webassembly.js - 200 null text/javascript 19.6865ms
+2025-07-14 20:28:48.847 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/dotnet.js - null null
+2025-07-14 20:28:48.850 -04:00 [INF] Sending file. Request path: '/_framework/dotnet.js'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\dotnet.js'
+2025-07-14 20:28:48.850 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/dotnet.js - 200 null text/javascript 3.2733ms
+2025-07-14 20:28:48.873 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/matt/Recording.m4a - null null
+2025-07-14 20:28:48.873 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/kim/Recording.m4a - null null
+2025-07-14 20:28:48.873 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/nick/Recording.m4a - null null
+2025-07-14 20:28:48.875 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - null null
+2025-07-14 20:28:48.877 -04:00 [INF] Sending ["bytes 0-54943/54944"] of file C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\sounds\nick\Recording.m4a
+2025-07-14 20:28:48.877 -04:00 [INF] Sending ["bytes 0-54943/54944"] of file C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\sounds\matt\Recording.m4a
+2025-07-14 20:28:48.877 -04:00 [INF] Sending ["bytes 0-54943/54944"] of file C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\sounds\kim\Recording.m4a
+2025-07-14 20:28:48.879 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/nick/Recording.m4a - 206 54944 audio/mp4 5.2973ms
+2025-07-14 20:28:48.881 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/matt/Recording.m4a - 206 54944 audio/mp4 7.9848ms
+2025-07-14 20:28:48.881 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/kim/Recording.m4a - 206 54944 audio/mp4 7.6309ms
+2025-07-14 20:28:48.882 -04:00 [INF] Sending file. Request path: '/_framework/blazor.boot.json'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json'
+2025-07-14 20:28:48.882 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - 200 null application/json 6.8614ms
+2025-07-14 20:28:48.887 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/dotnet.native.st0ovrfdhi.js - null null
+2025-07-14 20:28:48.888 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/dotnet.runtime.593bvuk5yc.js - null null
+2025-07-14 20:28:48.889 -04:00 [INF] Sending file. Request path: '/_framework/dotnet.native.st0ovrfdhi.js'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\dotnet.native.st0ovrfdhi.js'
+2025-07-14 20:28:48.890 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/dotnet.native.st0ovrfdhi.js - 200 null text/javascript 2.1511ms
+2025-07-14 20:28:48.890 -04:00 [INF] Sending file. Request path: '/_framework/dotnet.runtime.593bvuk5yc.js'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\dotnet.runtime.593bvuk5yc.js'
+2025-07-14 20:28:48.890 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/dotnet.runtime.593bvuk5yc.js - 200 null text/javascript 2.5447ms
+2025-07-14 20:28:48.976 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Client.2javqqfdzm.wasm - null null
+2025-07-14 20:28:48.976 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Shared.1i6j85bj9k.wasm - null null
+2025-07-14 20:28:48.980 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Shared.1i6j85bj9k.wasm'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\PoBabyTouchGc.Shared.1i6j85bj9k.wasm'
+2025-07-14 20:28:48.980 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Shared.1i6j85bj9k.wasm - 200 null application/wasm 4.1259ms
+2025-07-14 20:28:48.981 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Client.2javqqfdzm.wasm'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\PoBabyTouchGc.Client.2javqqfdzm.wasm'
+2025-07-14 20:28:48.981 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Client.2javqqfdzm.wasm - 200 null application/wasm 5.7076ms
+2025-07-14 20:28:49.278 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor-hotreload - null null
+2025-07-14 20:28:49.280 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor-hotreload - 204 null null 1.9689ms
+2025-07-14 20:31:12.354 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.png - null null
+2025-07-14 20:31:12.354 -04:00 [INF] The file /favicon.png was not modified
+2025-07-14 20:31:12.354 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.png - 304 null image/png 0.8485ms
+2025-07-14 20:31:14.638 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/highscores/check/2 - null null
+2025-07-14 20:31:14.641 -04:00 [INF] Executing endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.IsHighScore (PoBabyTouchGc.Server)'
+2025-07-14 20:31:14.664 -04:00 [INF] Route matched with {action = "IsHighScore", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] IsHighScore(Int32, System.String) on controller PoBabyTouchGc.Server.Controllers.HighScoresController (PoBabyTouchGc.Server).
+2025-07-14 20:31:14.671 -04:00 [INF] Initializing Azure TableServiceClient for high scores
+2025-07-14 20:31:15.056 -04:00 [INF] Successfully initialized TableServiceClient and verified 'PoBabyTouchGcHighScores' table
+2025-07-14 20:31:15.383 -04:00 [INF] Retrieved 4 high scores for Default mode
+2025-07-14 20:31:15.386 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2025-07-14 20:31:15.392 -04:00 [INF] Executed action PoBabyTouchGc.Server.Controllers.HighScoresController.IsHighScore (PoBabyTouchGc.Server) in 722.0483ms
+2025-07-14 20:31:15.392 -04:00 [INF] Executed endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.IsHighScore (PoBabyTouchGc.Server)'
+2025-07-14 20:31:15.392 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/highscores/check/2 - 200 null application/json; charset=utf-8 754.2793ms
+2025-07-14 20:31:24.139 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/highscores - application/json; charset=utf-8 55
+2025-07-14 20:31:24.140 -04:00 [INF] CORS policy execution successful.
+2025-07-14 20:31:24.142 -04:00 [INF] Executing endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.SaveHighScore (PoBabyTouchGc.Server)'
+2025-07-14 20:31:24.145 -04:00 [INF] Route matched with {action = "SaveHighScore", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] SaveHighScore(PoBabyTouchGc.Shared.Models.SaveHighScoreRequest) on controller PoBabyTouchGc.Server.Controllers.HighScoresController (PoBabyTouchGc.Server).
+2025-07-14 20:31:24.201 -04:00 [INF] High score saved successfully: LLL - 2 points
+2025-07-14 20:31:24.201 -04:00 [INF] High score saved successfully: LLL - 2 points
+2025-07-14 20:31:24.202 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 20:31:24.207 -04:00 [INF] Executed action PoBabyTouchGc.Server.Controllers.HighScoresController.SaveHighScore (PoBabyTouchGc.Server) in 61.6868ms
+2025-07-14 20:31:24.207 -04:00 [INF] Executed endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.SaveHighScore (PoBabyTouchGc.Server)'
+2025-07-14 20:31:24.207 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/highscores - 200 null application/json; charset=utf-8 68.0703ms
+2025-07-14 20:31:26.294 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/highscores?count=10 - null null
+2025-07-14 20:31:26.294 -04:00 [INF] Executing endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
+2025-07-14 20:31:26.300 -04:00 [INF] Route matched with {action = "GetTopScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PoBabyTouchGc.Shared.Models.HighScore]]] GetTopScores(Int32, System.String) on controller PoBabyTouchGc.Server.Controllers.HighScoresController (PoBabyTouchGc.Server).
+2025-07-14 20:31:26.336 -04:00 [INF] Retrieved 5 high scores for Default mode
+2025-07-14 20:31:26.336 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoBabyTouchGc.Shared.Models.HighScore, PoBabyTouchGc.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-14 20:31:26.357 -04:00 [INF] Executed action PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server) in 56.8999ms
+2025-07-14 20:31:26.357 -04:00 [INF] Executed endpoint 'PoBabyTouchGc.Server.Controllers.HighScoresController.GetTopScores (PoBabyTouchGc.Server)'
+2025-07-14 20:31:26.358 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/highscores?count=10 - 200 null application/json; charset=utf-8 63.9488ms
+2025-07-14 20:41:09.346 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/?id=33c91e72-bdf0-4013-ba4a-3e1bf966b2e7&vscodeBrowserReqId=1752540069330 - null null
+2025-07-14 20:41:09.346 -04:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-07-14 20:41:09.347 -04:00 [INF] Sending file. Request path: '/index.html'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\index.html'
+2025-07-14 20:41:09.347 -04:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-07-14 20:41:09.348 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html?id=33c91e72-bdf0-4013-ba4a-3e1bf966b2e7&vscodeBrowserReqId=1752540069330 - 200 null text/html 1.4899ms
+2025-07-14 20:41:09.431 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-07-14 20:41:09.432 -04:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-07-14 20:41:09.432 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 0.6005ms
+2025-07-14 20:41:09.432 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - null null
+2025-07-14 20:41:09.433 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/app.css - null null
+2025-07-14 20:41:09.433 -04:00 [INF] The file /css/app.css was not modified
+2025-07-14 20:41:09.433 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/app.css - 304 null text/css 0.2975ms
+2025-07-14 20:41:09.434 -04:00 [INF] Sending file. Request path: '/PoBabyTouchGc.Client.styles.css'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\obj\Debug\net9.0\scopedcss\bundle\PoBabyTouchGc.Client.styles.css'
+2025-07-14 20:41:09.434 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor.webassembly.js - null null
+2025-07-14 20:41:09.435 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/game.js - null null
+2025-07-14 20:41:09.435 -04:00 [INF] The file /js/game.js was not modified
+2025-07-14 20:41:09.435 -04:00 [INF] The file /_framework/blazor.webassembly.js was not modified
+2025-07-14 20:41:09.435 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor.webassembly.js - 304 null text/javascript 0.4136ms
+2025-07-14 20:41:09.435 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/game.js - 304 null text/javascript 0.1758ms
+2025-07-14 20:41:09.435 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - 200 null text/css 3.4505ms
+2025-07-14 20:41:09.480 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/matt/Recording.m4a - null null
+2025-07-14 20:41:09.481 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/kim/Recording.m4a - null null
+2025-07-14 20:41:09.481 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sounds/nick/Recording.m4a - null null
+2025-07-14 20:41:09.481 -04:00 [INF] The file /sounds/matt/Recording.m4a was not modified
+2025-07-14 20:41:09.481 -04:00 [INF] The file /sounds/kim/Recording.m4a was not modified
+2025-07-14 20:41:09.481 -04:00 [INF] The file /sounds/nick/Recording.m4a was not modified
+2025-07-14 20:41:09.481 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/kim/Recording.m4a - 304 null audio/mp4 0.4614ms
+2025-07-14 20:41:09.481 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/matt/Recording.m4a - 304 null audio/mp4 1.4265ms
+2025-07-14 20:41:09.482 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sounds/nick/Recording.m4a - 304 null audio/mp4 1.3807ms
+2025-07-14 20:41:09.485 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - null null
+2025-07-14 20:41:09.487 -04:00 [INF] Sending file. Request path: '/_framework/blazor.boot.json'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json'
+2025-07-14 20:41:09.487 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - 200 null application/json 1.7058ms
+2025-07-14 20:41:09.606 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Shared.1i6j85bj9k.wasm - null null
+2025-07-14 20:41:09.608 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Client.2javqqfdzm.wasm - null null
+2025-07-14 20:41:09.610 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Shared.1i6j85bj9k.wasm'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\PoBabyTouchGc.Shared.1i6j85bj9k.wasm'
+2025-07-14 20:41:09.611 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Shared.1i6j85bj9k.wasm - 200 null application/wasm 4.9222ms
+2025-07-14 20:41:09.624 -04:00 [INF] Sending file. Request path: '/_framework/PoBabyTouchGc.Client.2javqqfdzm.wasm'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\bin\Debug\net9.0\wwwroot\_framework\PoBabyTouchGc.Client.2javqqfdzm.wasm'
+2025-07-14 20:41:09.624 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/PoBabyTouchGc.Client.2javqqfdzm.wasm - 200 null application/wasm 16.3775ms
+2025-07-14 20:41:10.838 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor-hotreload - null null
+2025-07-14 20:41:10.838 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor-hotreload - 204 null null 0.162ms
+2025-07-14 21:34:22.696 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger?id=33c91e72-bdf0-4013-ba4a-3e1bf966b2e7&vscodeBrowserReqId=1752543262685 - null null
+2025-07-14 21:34:22.697 -04:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-07-14 21:34:22.700 -04:00 [INF] Sending file. Request path: '/index.html'. Physical path: 'C:\Users\punko\Downloads\PoBabyTouch\Client\PoBabyTouchGc.Client\wwwroot\index.html'
+2025-07-14 21:34:22.700 -04:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-07-14 21:34:22.700 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html?id=33c91e72-bdf0-4013-ba4a-3e1bf966b2e7&vscodeBrowserReqId=1752543262685 - 200 null text/html 4.4897ms
+2025-07-14 21:34:22.729 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - null null
+2025-07-14 21:34:22.729 -04:00 [INF] The file /PoBabyTouchGc.Client.styles.css was not modified
+2025-07-14 21:34:22.729 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/PoBabyTouchGc.Client.styles.css - 304 null text/css 0.4459ms
+2025-07-14 21:34:22.762 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - null null
+2025-07-14 21:34:22.763 -04:00 [INF] The file /_framework/blazor.boot.json was not modified
+2025-07-14 21:34:22.763 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor.boot.json - 304 null application/json 0.5256ms
+2025-07-14 21:34:23.632 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/blazor-hotreload - null null
+2025-07-14 21:34:23.632 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/blazor-hotreload - 204 null null 0.1213ms

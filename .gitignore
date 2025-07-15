@@ -491,24 +491,3 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
-
-# Additional build artifacts and deployment files
-publish/
-deploy.zip
-app.zip
-logs.zip
-*.tgz
-*.tar.gz
-
-# Static web assets compression cache
-**/compressed/
-**/staticwebassets/
-**/staticwebassets.json
-**/staticwebassets.build.json
-**/staticwebassets.publish.json
-
-# Temporary files that might cause build conflicts
-*.tmp
-*.temp
-**/temp/
-**/tmp/
