@@ -27,7 +27,7 @@ namespace PoBabyTouchGc.Server.Controllers
         /// Get top high scores
         /// </summary>
         [HttpGet]
-        public async Task<ActionResult<List<HighScore>>> GetTopScores(
+        public async Task<ActionResult<ApiResponse<List<HighScore>>>> GetTopScores(
             [FromQuery] int count = 10,
             [FromQuery] string gameMode = "Default")
         {
@@ -36,12 +36,12 @@ namespace PoBabyTouchGc.Server.Controllers
                 _logger.LogDebug("Getting top {Count} scores for {GameMode} mode", count, gameMode);
 
                 var scores = await _highScoreService.GetTopScoresAsync(count, gameMode);
-                return Ok(scores);
+                return Ok(ApiResponse<List<HighScore>>.SuccessResult(scores));
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to get top scores");
-                return StatusCode(500, "Failed to retrieve top scores");
+                return StatusCode(500, ApiResponse<List<HighScore>>.ErrorResult("Failed to retrieve top scores"));
             }
         }
 
@@ -97,19 +97,19 @@ namespace PoBabyTouchGc.Server.Controllers
         /// Check if a score qualifies as a high score
         /// </summary>
         [HttpGet("check/{score}")]
-        public async Task<ActionResult<bool>> IsHighScore(int score, [FromQuery] string gameMode = "Default")
+        public async Task<ActionResult<ApiResponse<bool>>> IsHighScore(int score, [FromQuery] string gameMode = "Default")
         {
             try
             {
                 _logger.LogDebug("Checking if score {Score} is a high score", score);
 
                 var isHighScore = await _highScoreService.IsHighScoreAsync(score, gameMode);
-                return Ok(isHighScore);
+                return Ok(ApiResponse<bool>.SuccessResult(isHighScore));
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to check if score is high score");
-                return StatusCode(500, "Failed to check if score is high score");
+                return StatusCode(500, ApiResponse<bool>.ErrorResult("Failed to check if score is high score"));
             }
         }
 
