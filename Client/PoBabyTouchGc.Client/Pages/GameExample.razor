@@ -1,5 +1,6 @@
 @page "/game-example"
 @using PoBabyTouchGc.Client.Components
+@using PoBabyTouchGc.Shared.Models
 @using System.Text.Json
 @inject HttpClient Http
 
@@ -249,17 +250,17 @@
     private async Task OnHighScoreSaved()
     {
         ShowHighScoreEntry = false;
-        StateHasChanged();
+        await InvokeAsync(StateHasChanged);
         
         // Refresh the high scores display
         await Task.Delay(1000); // Small delay to ensure save is complete
-        StateHasChanged();
+        await InvokeAsync(StateHasChanged);
     }
 
     private async Task OnHighScoreSkipped()
     {
         ShowHighScoreEntry = false;
-        StateHasChanged();
+        await InvokeAsync(StateHasChanged);
     }
 
     private void StartNewGame()

@@ -43,7 +43,7 @@ namespace PoBabyTouchGc.Server.Services
                 // Validate input using validation service
                 var validationResult = _validationService.ValidateHighScore(new SaveHighScoreRequest
                 {
-                    PlayerInitials = playerInitials,
+                    PlayerInitials = playerInitials ?? string.Empty,
                     Score = score,
                     GameMode = gameMode
                 });

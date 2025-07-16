@@ -66,9 +66,9 @@ namespace PoBabyTouchGc.Server.Services
             {
                 result.Errors.Add("Player initials must be exactly 3 characters");
             }
-            else if (!playerInitials.All(char.IsLetter))
+            else if (!playerInitials.All(char.IsLetterOrDigit))
             {
-                result.Errors.Add("Player initials must contain only letters");
+                result.Errors.Add("Player initials must contain only letters and numbers");
             }
 
             return result;

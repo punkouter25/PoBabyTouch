@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
@@ -23,9 +23,9 @@ jobs:
 
     - name: Clean obj and bin directories
       run: |
-        Get-ChildItem -Path . -Recurse -Directory -Name "obj" | ForEach-Object { Remove-Item -Path $_ -Recurse -Force -ErrorAction SilentlyContinue }
-        Get-ChildItem -Path . -Recurse -Directory -Name "bin" | ForEach-Object { Remove-Item -Path $_ -Recurse -Force -ErrorAction SilentlyContinue }
-        Get-ChildItem -Path . -Recurse -Directory -Name "compressed" | ForEach-Object { Remove-Item -Path $_ -Recurse -Force -ErrorAction SilentlyContinue }
+        find . -name "obj" -type d -exec rm -rf {} + 2>/dev/null || true
+        find . -name "bin" -type d -exec rm -rf {} + 2>/dev/null || true
+        find . -name "compressed" -type d -exec rm -rf {} + 2>/dev/null || true
 
     - name: Restore dependencies
       run: dotnet restore PoBabyTouchGc.sln --verbosity normal
@@ -43,7 +43,7 @@ jobs:
         path: ./publish
 
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: build
     environment:
       name: 'Production'

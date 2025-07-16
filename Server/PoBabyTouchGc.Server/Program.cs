@@ -89,7 +89,6 @@ builder.Services.AddCors(options =>
 builder.Services.AddScoped<IHighScoreRepository, AzureTableHighScoreRepository>();
 // Applying Strategy Pattern for validation logic
 builder.Services.AddScoped<IHighScoreValidationService, HighScoreValidationService>();
-builder.Services.AddScoped<HighScoreValidationService>();
 // Applying Service Layer Pattern for business logic
 builder.Services.AddScoped<IHighScoreService, HighScoreService>();
 
