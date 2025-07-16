@@ -225,7 +225,8 @@
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                var isHighScore = JsonSerializer.Deserialize<bool>(json);
+                using var document = JsonDocument.Parse(json);
+                var isHighScore = document.RootElement.GetProperty("data").GetBoolean();
                 
                 if (isHighScore)
                 {
@@ -236,11 +237,12 @@
         catch (Exception ex)
         {
             Console.WriteLine($"Failed to check high score: {ex.Message}");
+            await Task.Delay(1); // Ensure this is properly async
         }
         finally
         {
             IsHighScoreChecked = true;
-            StateHasChanged();
+            await InvokeAsync(StateHasChanged);
         }
     }
 

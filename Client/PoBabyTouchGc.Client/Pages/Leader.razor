@@ -84,10 +84,17 @@
             errorMessage = null;
             
             // Fetch top 10 leaderboard data from API
-            leaderboardEntries = await Http.GetFromJsonAsync<List<HighScore>>("api/highscores?count=10");
+            var response = await Http.GetFromJsonAsync<ApiResponse<List<HighScore>>>("api/highscores?count=10");
             
-            // If no entries, initialize empty list
-            leaderboardEntries ??= new List<HighScore>();
+            if (response?.Success == true && response.Data != null)
+            {
+                leaderboardEntries = response.Data;
+            }
+            else
+            {
+                errorMessage = response?.Message ?? "Failed to load leaderboard data";
+                leaderboardEntries = new List<HighScore>();
+            }
         }
         catch (Exception ex)
         {

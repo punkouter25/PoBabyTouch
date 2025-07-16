@@ -1,4 +1,5 @@
 @using System.Text.Json
+@using PoBabyTouchGc.Shared.Models
 @inject HttpClient Http
 
 <div class="high-score-display">
@@ -45,7 +46,7 @@
                     </div>
                     <div class="player-initials">@score.PlayerInitials</div>
                     <div class="score-value">@score.Score.ToString("N0")</div>
-                    <div class="achieved-date">@score.AchievedAt.ToString("MMM dd")</div>
+                    <div class="achieved-date">@score.ScoreDate.ToString("MMM dd")</div>
                 </div>
             }
         </div>
@@ -237,13 +238,6 @@
     private string ErrorMessage { get; set; } = "";
     private Timer? refreshTimer;
 
-    public class HighScore
-    {
-        public string PlayerInitials { get; set; } = "";
-        public int Score { get; set; }
-        public DateTime AchievedAt { get; set; }
-        public string GameMode { get; set; } = "Default";
-    }
 
     protected override async Task OnInitializedAsync()
     {
@@ -268,12 +262,19 @@
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                var scores = JsonSerializer.Deserialize<List<HighScore>>(json, new JsonSerializerOptions
+                var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<HighScore>>>(json, new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 });
 
-                HighScores = scores ?? new List<HighScore>();
+                if (apiResponse?.Success == true && apiResponse.Data != null)
+                {
+                    HighScores = apiResponse.Data;
+                }
+                else
+                {
+                    ErrorMessage = apiResponse?.Message ?? "Failed to load high scores.";
+                }
             }
             else
             {

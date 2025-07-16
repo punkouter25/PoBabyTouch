@@ -282,8 +282,12 @@
             var response = await Http.GetAsync($"api/highscores/check/{GameStateService.CurrentScore}");
             if (response.IsSuccessStatusCode)
             {
-                var isHighScore = await response.Content.ReadFromJsonAsync<bool>();
-                Console.WriteLine($"Score {GameStateService.CurrentScore} is high score: {isHighScore}");
+                var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
+                if (apiResponse?.Success == true)
+                {
+                    var isHighScore = apiResponse.Data;
+                    Console.WriteLine($"Score {GameStateService.CurrentScore} is high score: {isHighScore}");
+                }
             }
         }
         catch (Exception ex)

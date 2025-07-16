@@ -11,7 +11,7 @@ namespace PoBabyTouchGc.Server.Services
     /// </summary>
     public interface IHighScoreService
     {
-        Task<bool> SaveHighScoreAsync(string playerInitials, int score, string gameMode = "Default");
+        Task<bool> SaveHighScoreAsync(string? playerInitials, int score, string gameMode = "Default");
         Task<List<HighScore>> GetTopScoresAsync(int count = 10, string gameMode = "Default");
         Task<bool> IsHighScoreAsync(int score, string gameMode = "Default");
         Task<int> GetPlayerRankAsync(int score, string gameMode = "Default");
@@ -33,7 +33,7 @@ namespace PoBabyTouchGc.Server.Services
             _logger = logger;
         }
 
-        public async Task<bool> SaveHighScoreAsync(string playerInitials, int score, string gameMode = "Default")
+        public async Task<bool> SaveHighScoreAsync(string? playerInitials, int score, string gameMode = "Default")
         {
             try
             {
@@ -58,7 +58,7 @@ namespace PoBabyTouchGc.Server.Services
                 // Create high score entity
                 var highScore = new HighScore
                 {
-                    PlayerInitials = playerInitials,
+                    PlayerInitials = playerInitials!, // Null-forgiving operator used after validation
                     Score = score,
                     GameMode = gameMode,
                     ScoreDate = DateTime.UtcNow

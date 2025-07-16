@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using PoBabyTouchGc.Shared.Models;
 using PoBabyTouchGc.Server.Services;
-using PoBabyTouchGc.Server.Models;
 using HighScore = PoBabyTouchGc.Shared.Models.HighScore; // Use the shared model for API responses
 
 namespace PoBabyTouchGc.Server.Controllers
@@ -37,13 +36,13 @@ namespace PoBabyTouchGc.Server.Controllers
                 _logger.LogDebug("Getting top {Count} scores for {GameMode} mode", count, gameMode);
 
                 var scores = await _highScoreService.GetTopScoresAsync(count, gameMode);
-                var response = ApiResponse<List<HighScore>>.CreateSuccess(scores, "Top scores retrieved successfully");
+                var response = ApiResponse<List<HighScore>>.SuccessResult(scores, "Top scores retrieved successfully");
                 return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to get top scores");
-                var response = ApiResponse<List<HighScore>>.CreateError("Failed to retrieve top scores");
+                var response = ApiResponse<List<HighScore>>.ErrorResult("Failed to retrieve top scores");
                 return StatusCode(500, response);
             }
         }
@@ -52,7 +51,7 @@ namespace PoBabyTouchGc.Server.Controllers
         /// Save a new high score
         /// </summary>
         [HttpPost]
-        public async Task<ActionResult<ApiResponse>> SaveHighScore([FromBody] SaveHighScoreRequest request)
+        public async Task<ActionResult<ApiResponse<object>>> SaveHighScore([FromBody] SaveHighScoreRequest request)
         {
             try
             {
@@ -64,7 +63,7 @@ namespace PoBabyTouchGc.Server.Controllers
 
                 if (!validationResult.IsValid)
                 {
-                    var validationResponse = ApiResponse.CreateError(validationResult.ErrorMessage!);
+                    var validationResponse = ApiResponse<object>.ErrorResult(validationResult.ErrorMessage ?? "Validation Error" as string);
                     return BadRequest(validationResponse);
                 }
 
@@ -77,21 +76,21 @@ namespace PoBabyTouchGc.Server.Controllers
                 {
                     _logger.LogInformation("High score saved successfully: {PlayerInitials} - {Score} points",
                         request.PlayerInitials, request.Score);
-                    var response = ApiResponse.CreateSuccess("High score saved successfully");
+                    var response = ApiResponse<object>.SuccessResult(null, "High score saved successfully");
                     return Ok(response);
                 }
                 else
                 {
                     _logger.LogWarning("Failed to save high score: {PlayerInitials} - {Score} points",
                         request.PlayerInitials, request.Score);
-                    var response = ApiResponse.CreateError("Failed to save high score");
+                    var response = ApiResponse<object>.ErrorResult("Failed to save high score");
                     return StatusCode(500, response);
                 }
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error saving high score");
-                var response = ApiResponse.CreateError("Internal server error");
+                var response = ApiResponse<object>.ErrorResult("Internal server error");
                 return StatusCode(500, response);
             }
         }
@@ -107,13 +106,13 @@ namespace PoBabyTouchGc.Server.Controllers
                 _logger.LogDebug("Checking if score {Score} is a high score", score);
 
                 var isHighScore = await _highScoreService.IsHighScoreAsync(score, gameMode);
-                var response = ApiResponse<bool>.CreateSuccess(isHighScore, "High score check completed");
+                var response = ApiResponse<bool>.SuccessResult(isHighScore, "High score check completed");
                 return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to check if score is high score");
-                var response = ApiResponse<bool>.CreateError("Failed to check if score is high score");
+                var response = ApiResponse<bool>.ErrorResult("Failed to check if score is high score");
                 return StatusCode(500, response);
             }
         }
@@ -129,13 +128,13 @@ namespace PoBabyTouchGc.Server.Controllers
                 _logger.LogDebug("Getting rank for score {Score}", score);
 
                 var rank = await _highScoreService.GetPlayerRankAsync(score, gameMode);
-                var response = ApiResponse<int>.CreateSuccess(rank, "Player rank retrieved successfully");
+                var response = ApiResponse<int>.SuccessResult(rank, "Player rank retrieved successfully");
                 return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to get player rank");
-                var response = ApiResponse<int>.CreateError("Failed to get player rank");
+                var response = ApiResponse<int>.ErrorResult("Failed to get player rank");
                 return StatusCode(500, response);
             }
         }
@@ -153,13 +152,13 @@ namespace PoBabyTouchGc.Server.Controllers
                 // Try to get top scores as a simple test
                 var scores = await _highScoreService.GetTopScoresAsync(1, "Default");
                 var testData = new { status = "connected", message = "High score service is working", scoresCount = scores.Count };
-                var response = ApiResponse<object>.CreateSuccess(testData, "Service test completed successfully");
+                var response = ApiResponse<object>.SuccessResult(testData, "Service test completed successfully");
                 return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "High score service test failed");
-                var response = ApiResponse<object>.CreateError("High score service test failed");
+                var response = ApiResponse<object>.ErrorResult("High score service test failed");
                 return StatusCode(500, response);
             }
         }
