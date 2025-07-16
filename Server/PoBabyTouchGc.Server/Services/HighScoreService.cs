@@ -1,12 +1,13 @@
-using Azure;
-using Azure.Data.Tables;
 using PoBabyTouchGc.Shared.Models;
+using PoBabyTouchGc.Server.Repositories;
 
 namespace PoBabyTouchGc.Server.Services
 {
     /// <summary>
-    /// Service for managing high scores in Azure Table Storage
-    /// Uses Repository pattern for data access abstraction
+    /// Service for managing high scores
+    /// Applying Service Layer Pattern for business logic abstraction
+    /// Uses Repository Pattern for data access abstraction
+    /// Follows SOLID principles - Single Responsibility and Dependency Inversion
     /// </summary>
     public interface IHighScoreService
     {
@@ -18,13 +19,17 @@ namespace PoBabyTouchGc.Server.Services
 
     public class HighScoreService : IHighScoreService
     {
-        private readonly TableClient _tableClient;
+        private readonly IHighScoreRepository _repository;
+        private readonly IHighScoreValidationService _validationService;
         private readonly ILogger<HighScoreService> _logger;
-        private const string TableName = "PoBabyTouchGcHighScores";
 
-        public HighScoreService(TableServiceClient tableServiceClient, ILogger<HighScoreService> logger)
+        public HighScoreService(
+            IHighScoreRepository repository,
+            IHighScoreValidationService validationService,
+            ILogger<HighScoreService> logger)
         {
-            _tableClient = tableServiceClient.GetTableClient(TableName);
+            _repository = repository;
+            _validationService = validationService;
             _logger = logger;
         }
 
@@ -32,29 +37,43 @@ namespace PoBabyTouchGc.Server.Services
         {
             try
             {
-                _logger.LogDebug("Saving high score: {PlayerInitials} - {Score} points in {GameMode} mode", 
+                _logger.LogDebug("Saving high score: {PlayerInitials} - {Score} points in {GameMode} mode",
                     playerInitials, score, gameMode);
 
-                // Validate initials (must be exactly 3 characters)
-                if (string.IsNullOrWhiteSpace(playerInitials) || playerInitials.Length != 3)
+                // Validate input using validation service
+                var validationResult = _validationService.ValidateHighScore(new SaveHighScoreRequest
                 {
-                    _logger.LogWarning("Invalid player initials: {PlayerInitials}. Must be exactly 3 characters.", playerInitials);
+                    PlayerInitials = playerInitials,
+                    Score = score,
+                    GameMode = gameMode
+                });
+
+                if (!validationResult.IsValid)
+                {
+                    _logger.LogWarning("Invalid high score data: {Errors}",
+                        string.Join(", ", validationResult.Errors));
                     return false;
                 }
 
-                // Ensure table exists
-                await _tableClient.CreateIfNotExistsAsync();
+                // Create high score entity
+                var highScore = new HighScore
+                {
+                    PlayerInitials = playerInitials,
+                    Score = score,
+                    GameMode = gameMode,
+                    ScoreDate = DateTime.UtcNow
+                };
 
-                var highScore = new HighScore(gameMode, playerInitials, score);
-                await _tableClient.AddEntityAsync(highScore);
+                // Save using repository
+                await _repository.SaveHighScoreAsync(highScore);
 
-                _logger.LogInformation("High score saved successfully: {PlayerInitials} - {Score} points", 
+                _logger.LogInformation("High score saved successfully: {PlayerInitials} - {Score} points",
                     playerInitials, score);
                 return true;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Failed to save high score for {PlayerInitials} - {Score} points", 
+                _logger.LogError(ex, "Failed to save high score for {PlayerInitials} - {Score} points",
                     playerInitials, score);
                 return false;
             }
@@ -66,32 +85,16 @@ namespace PoBabyTouchGc.Server.Services
             {
                 _logger.LogDebug("Retrieving top {Count} scores for {GameMode} mode", count, gameMode);
 
-                // Ensure table exists
-                await _tableClient.CreateIfNotExistsAsync();
+                var scores = await _repository.GetTopScoresAsync(count, gameMode);
 
-                var query = _tableClient.QueryAsync<HighScore>(
-                    filter: $"PartitionKey eq '{gameMode}'",
-                    maxPerPage: count
-                );
-
-                var highScores = new List<HighScore>();
-                await foreach (var score in query)
-                {
-                    highScores.Add(score);
-                    if (highScores.Count >= count) break;
-                }
-
-                // Sort by score descending (in case Azure ordering isn't perfect)
-                var sortedScores = highScores.OrderByDescending(s => s.Score).Take(count).ToList();
-
-                _logger.LogInformation("Retrieved {Count} high scores for {GameMode} mode", 
-                    sortedScores.Count, gameMode);
-                return sortedScores;
+                _logger.LogInformation("Retrieved {Count} high scores for {GameMode} mode",
+                    scores.Count, gameMode);
+                return scores;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to retrieve high scores for {GameMode} mode", gameMode);
-                return new List<HighScore>();
+                throw;
             }
         }
 
@@ -99,27 +102,16 @@ namespace PoBabyTouchGc.Server.Services
         {
             try
             {
-                var topScores = await GetTopScoresAsync(10, gameMode);
-                
-                // If we have less than 10 scores, any score is a high score
-                if (topScores.Count < 10)
-                {
-                    _logger.LogDebug("Score {Score} qualifies as high score (less than 10 scores exist)", score);
-                    return true;
-                }
+                var isHighScore = await _repository.IsHighScoreAsync(score, gameMode);
 
-                // Check if score is higher than the lowest top score
-                var lowestTopScore = topScores.Min(s => s.Score);
-                var isHighScore = score > lowestTopScore;
-
-                _logger.LogDebug("Score {Score} is {IsHighScore} a high score (lowest top score: {LowestTopScore})", 
-                    score, isHighScore ? "" : "not", lowestTopScore);
+                _logger.LogDebug("Score {Score} is {IsHighScore} a high score for {GameMode} mode",
+                    score, isHighScore ? "" : "not", gameMode);
                 return isHighScore;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to check if score {Score} is a high score", score);
-                return false;
+                throw;
             }
         }
 
@@ -127,17 +119,16 @@ namespace PoBabyTouchGc.Server.Services
         {
             try
             {
-                var topScores = await GetTopScoresAsync(100, gameMode); // Get more scores for accurate ranking
-                var rank = topScores.Count(s => s.Score > score) + 1;
+                var rank = await _repository.GetPlayerRankAsync(score, gameMode);
 
-                _logger.LogDebug("Score {Score} ranks #{Rank} out of {TotalScores} scores", 
-                    score, rank, topScores.Count);
+                _logger.LogDebug("Score {Score} ranks #{Rank} for {GameMode} mode",
+                    score, rank, gameMode);
                 return rank;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to get player rank for score {Score}", score);
-                return -1;
+                throw;
             }
         }
     }

@@ -13,17 +13,17 @@ public class HighScore : ITableEntity
     /// Player's 3-letter initials
     /// </summary>
     public string PlayerInitials { get; set; } = string.Empty;
-    
+
     /// <summary>
     /// Player's score
     /// </summary>
     public int Score { get; set; }
-    
+
     /// <summary>
     /// Game mode (e.g., "Easy", "Normal", "Hard")
     /// </summary>
     public string GameMode { get; set; } = "Default";
-    
+
     /// <summary>
     /// Date and time when the score was achieved
     /// </summary>
@@ -45,10 +45,10 @@ public class HighScore : ITableEntity
         PlayerInitials = playerInitials.ToUpper();
         Score = score;
         ScoreDate = DateTime.UtcNow;
-        
+
         // Partition by game mode for better performance
         PartitionKey = gameMode;
-        
+
         // Row key combines negative score (for sorting) and timestamp for uniqueness
         // Negative score ensures higher scores appear first when sorted
         RowKey = $"{(999999 - score):D6}_{ScoreDate:yyyyMMddHHmmss}_{Guid.NewGuid():N}";

@@ -154,7 +154,7 @@
         try
         {
             apiStatusMessage = "Checking API connection...";
-            var response = await Http.GetAsync("api/scores");
+            var response = await Http.GetAsync("api/health");
             
             apiStatus = response.IsSuccessStatusCode;
             apiStatusMessage = apiStatus 
@@ -174,8 +174,8 @@
         {
             tableStorageStatusMessage = "Checking Azure Table Storage connection...";
             
-            // We'll check the Table Storage connection indirectly through our API
-            var response = await Http.GetAsync("api/scores");
+            // We'll check the Table Storage connection indirectly through our API health endpoint
+            var response = await Http.GetAsync("api/health");
             
             tableStorageStatus = response.IsSuccessStatusCode;
             tableStorageStatusMessage = tableStorageStatus 

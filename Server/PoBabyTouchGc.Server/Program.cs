@@ -1,23 +1,45 @@
 using Microsoft.Extensions.Azure;
 using Azure.Data.Tables;
 using PoBabyTouchGc.Server.Services;
+using PoBabyTouchGc.Server.Repositories;
+using PoBabyTouchGc.Server.Middleware;
 using Microsoft.AspNetCore.ResponseCompression;
 using Serilog;
 using System.IO;
+using Microsoft.ApplicationInsights.Extensibility;
+using Serilog.Sinks.ApplicationInsights.TelemetryConverters; // Add this back
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure Serilog
-Log.Logger = new LoggerConfiguration()
-    .WriteTo.Console()
-    .WriteTo.File("log.txt", rollingInterval: RollingInterval.Day)
-    .CreateLogger();
+// Configure Serilog for verbose logging in development
+var logPath = Path.Combine(AppContext.BaseDirectory, "log.txt");
 
-builder.Host.UseSerilog();
+builder.Host.UseSerilog((context, services, loggerConfiguration) => loggerConfiguration
+    .MinimumLevel.Debug()
+    .WriteTo.Console()
+    .WriteTo.File(logPath, rollingInterval: RollingInterval.Day, shared: true, flushToDiskInterval: TimeSpan.FromSeconds(1))
+    .WriteTo.ApplicationInsights(services.GetRequiredService<TelemetryConfiguration>(), TelemetryConverter.Traces));
+
+builder.Services.AddApplicationInsightsTelemetry(options =>
+{
+    options.ConnectionString = builder.Configuration.GetConnectionString("APPLICATIONINSIGHTS_CONNECTION_STRING");
+});
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+// Add Swagger services
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "PoBabyTouchGc API",
+        Version = "v1",
+        Description = "API for PoBabyTouchGc - Baby Touch Game"
+    });
+});
+
 builder.Services.AddControllers();
 
 // Configure Azure Table Storage
@@ -30,13 +52,14 @@ string storageConnectionString = builder.Configuration.GetConnectionString("Azur
     ?? "UseDevelopmentStorage=true"; // Default to Azurite if no connection string provided
 
 Log.Information("Environment: {Environment}", builder.Environment.EnvironmentName);
-Log.Information("Using {StorageType} for Azure Table Storage", 
+Log.Information("Using {StorageType} for Azure Table Storage",
     storageConnectionString == "UseDevelopmentStorage=true" ? "Azurite (local)" : "Azure Storage");
 
 // Configure table storage client
 // Register TableServiceClient for high scores
-builder.Services.AddSingleton<TableServiceClient>(implementationFactory => {
-    try 
+builder.Services.AddSingleton<TableServiceClient>(implementationFactory =>
+{
+    try
     {
         Log.Information("Initializing Azure TableServiceClient for high scores");
         var tableServiceClient = new TableServiceClient(storageConnectionString);
@@ -62,6 +85,12 @@ builder.Services.AddCors(options =>
 });
 
 // Add our custom services
+// Applying Repository Pattern for data access abstraction
+builder.Services.AddScoped<IHighScoreRepository, AzureTableHighScoreRepository>();
+// Applying Strategy Pattern for validation logic
+builder.Services.AddScoped<IHighScoreValidationService, HighScoreValidationService>();
+builder.Services.AddScoped<HighScoreValidationService>();
+// Applying Service Layer Pattern for business logic
 builder.Services.AddScoped<IHighScoreService, HighScoreService>();
 
 // Configure response compression
@@ -78,6 +107,14 @@ if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();
     app.MapOpenApi();
+
+    // Enable Swagger UI
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "PoBabyTouchGc API V1");
+        c.RoutePrefix = "swagger"; // Accessible at /swagger
+    });
 }
 else
 {
@@ -86,6 +123,10 @@ else
 }
 
 app.UseResponseCompression();
+
+// Global Exception Handler Middleware - handles all unhandled exceptions
+app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseBlazorFrameworkFiles();
