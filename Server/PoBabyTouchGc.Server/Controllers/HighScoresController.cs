@@ -156,6 +156,57 @@ namespace PoBabyTouchGc.Server.Controllers
                 return StatusCode(500, response);
             }
         }
+
+        /// <summary>
+        /// Diagnostic endpoint for troubleshooting Azure Table Storage connection
+        /// </summary>
+        [HttpGet("diagnostics")]
+        public async Task<ActionResult<ApiResponse<object>>> GetDiagnostics()
+        {
+            try
+            {
+                _logger.LogDebug("Running diagnostics for high score service");
+
+                var diagnosticInfo = new
+                {
+                    status = "running",
+                    timestamp = DateTime.UtcNow,
+                    environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Unknown",
+                    connectionTest = "attempting...",
+                    tableTest = "pending...",
+                    serviceTest = "pending..."
+                };
+
+                // Test connection by attempting to get service properties
+                try
+                {
+                    await _highScoreService.GetTopScoresAsync(1, "Default");
+                    diagnosticInfo = diagnosticInfo with { 
+                        connectionTest = "success",
+                        tableTest = "success",
+                        serviceTest = "success"
+                    };
+                }
+                catch (Exception serviceEx)
+                {
+                    _logger.LogError(serviceEx, "High score service diagnostic test failed");
+                    diagnosticInfo = diagnosticInfo with { 
+                        connectionTest = "failed",
+                        tableTest = "failed",
+                        serviceTest = $"failed: {serviceEx.Message}"
+                    };
+                }
+
+                var response = ApiResponse<object>.SuccessResult(diagnosticInfo, "Diagnostics completed");
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Diagnostics endpoint failed");
+                var response = ApiResponse<object>.ErrorResult($"Diagnostics failed: {ex.Message}");
+                return StatusCode(500, response);
+            }
+        }
     }
 
 }

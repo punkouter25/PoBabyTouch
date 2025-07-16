@@ -18,7 +18,6 @@ namespace PoBabyTouchGc.Server.Repositories
         {
             _logger = logger;
             _tableClient = tableServiceClient.GetTableClient(TableName);
-            _tableClient.CreateIfNotExists();
         }
 
     public async Task<bool> SaveHighScoreAsync(HighScore highScore)

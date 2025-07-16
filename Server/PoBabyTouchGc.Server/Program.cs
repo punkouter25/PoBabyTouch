@@ -55,6 +55,23 @@ Log.Information("Environment: {Environment}", builder.Environment.EnvironmentNam
 Log.Information("Using {StorageType} for Azure Table Storage",
     storageConnectionString == "UseDevelopmentStorage=true" ? "Azurite (local)" : "Azure Storage");
 
+// Enhanced logging for production connection string debugging
+if (!builder.Environment.IsDevelopment())
+{
+    Log.Information("Production connection string source: {Source}", 
+        builder.Configuration.GetConnectionString("AzureTableStorage") != null ? "Configuration" :
+        Environment.GetEnvironmentVariable("AzureTableStorage") != null ? "AzureTableStorage env var" :
+        Environment.GetEnvironmentVariable("CUSTOMCONNSTR_AzureTableStorage") != null ? "CUSTOMCONNSTR_AzureTableStorage env var" :
+        Environment.GetEnvironmentVariable("SQLAZURECONNSTR_AzureTableStorage") != null ? "SQLAZURECONNSTR_AzureTableStorage env var" :
+        "Fallback to Azurite");
+    
+    // Log connection string format (without exposing secrets)
+    Log.Information("Connection string format: {Format}", 
+        storageConnectionString.StartsWith("DefaultEndpointsProtocol=https") ? "Azure Storage Account" :
+        storageConnectionString.StartsWith("UseDevelopmentStorage=true") ? "Azurite Local" :
+        "Unknown");
+}
+
 // Configure table storage client
 // Register TableServiceClient for high scores
 builder.Services.AddSingleton<TableServiceClient>(implementationFactory =>
@@ -63,14 +80,31 @@ builder.Services.AddSingleton<TableServiceClient>(implementationFactory =>
     {
         Log.Information("Initializing Azure TableServiceClient for high scores");
         var tableServiceClient = new TableServiceClient(storageConnectionString);
+        
+        // Test connection by attempting to get service properties
+        try
+        {
+            _ = tableServiceClient.GetProperties();
+            Log.Information("TableServiceClient connection test successful");
+        }
+        catch (Exception testEx)
+        {
+            Log.Error(testEx, "TableServiceClient connection test failed");
+            throw;
+        }
+        
         // Ensure the high scores table exists
-        tableServiceClient.GetTableClient("PoBabyTouchGcHighScores").CreateIfNotExists();
+        var tableClient = tableServiceClient.GetTableClient("PoBabyTouchGcHighScores");
+        tableClient.CreateIfNotExists();
         Log.Information("Successfully initialized TableServiceClient and verified 'PoBabyTouchGcHighScores' table");
         return tableServiceClient;
     }
     catch (Exception ex)
     {
-        Log.Error(ex, "Failed to initialize TableServiceClient");
+        Log.Error(ex, "Failed to initialize TableServiceClient. Connection string format: {Format}", 
+            storageConnectionString.StartsWith("DefaultEndpointsProtocol=https") ? "Azure Storage Account" :
+            storageConnectionString.StartsWith("UseDevelopmentStorage=true") ? "Azurite Local" :
+            "Unknown");
         throw;
     }
 });

@@ -62,9 +62,18 @@ namespace PoBabyTouchGc.Server.Middleware
                     response = ApiResponse.CreateError("Operation conflict");
                     break;
 
+                // Handle Azure Table Storage specific exceptions
+                case Azure.RequestFailedException azureEx:
+                    statusCode = HttpStatusCode.InternalServerError;
+                    response = ApiResponse.CreateError($"Azure Table Storage error: {azureEx.Message}");
+                    _logger.LogError(azureEx, "Azure Table Storage error: Status={Status}, ErrorCode={ErrorCode}", 
+                        azureEx.Status, azureEx.ErrorCode);
+                    break;
+
                 default:
                     statusCode = HttpStatusCode.InternalServerError;
                     response = ApiResponse.CreateError("An internal server error occurred");
+                    _logger.LogError(exception, "Unhandled exception in API: {ExceptionType}", exception.GetType().Name);
                     break;
             }
 
