@@ -117,19 +117,19 @@ namespace PoBabyTouchGc.Server.Controllers
         /// Get player rank for a given score
         /// </summary>
         [HttpGet("rank/{score}")]
-        public async Task<ActionResult<int>> GetPlayerRank(int score, [FromQuery] string gameMode = "Default")
+        public async Task<ActionResult<ApiResponse<int>>> GetPlayerRank(int score, [FromQuery] string gameMode = "Default")
         {
             try
             {
                 _logger.LogDebug("Getting rank for score {Score}", score);
 
                 var rank = await _highScoreService.GetPlayerRankAsync(score, gameMode);
-                return Ok(rank);
+                return Ok(ApiResponse<int>.SuccessResult(rank));
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to get player rank");
-                return StatusCode(500, "Failed to get player rank");
+                return StatusCode(500, ApiResponse<int>.ErrorResult("Failed to get player rank"));
             }
         }
 

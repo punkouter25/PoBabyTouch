@@ -24,6 +24,14 @@ To get started, you'll need to have the following installed:
     ```
 2.  Open the solution in Visual Studio or Visual Studio Code.
 3.  Start Azurite.
-4.  Press F5 to run the application.
+4.  **Configure Azure Connection String (for production):**
+    For production deployment, set the Azure Storage connection string using:
+    ```bash
+    cd Server/PoBabyTouchGc.Server
+    dotnet user-secrets set "ConnectionStrings:AzureTableStorage" "your_azure_connection_string_here"
+    ```
+5.  Press F5 to run the application.
+
+**Note:** The project uses Azurite for local development (configured in appsettings.Development.json) and requires an Azure Storage connection string for production (use user secrets or Azure App Service configuration).
 
 The application will open in your default browser. You can now play the game.

@@ -5,6 +5,7 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using Xunit;
 using Azure.Data.Tables;
+using PoBabyTouchGc.Shared.Models; // Add this using directive
 
 namespace PoBabyTouchGc.IntegrationTests
 {
@@ -85,19 +86,21 @@ namespace PoBabyTouchGc.IntegrationTests
 
             // Assert
             Assert.True(response.IsSuccessStatusCode);
-            var content = await response.Content.ReadAsStringAsync();
-            var result = JsonSerializer.Deserialize<JsonElement>(content);
-            Assert.True(result.TryGetProperty("message", out var message));
-            Assert.Equal("High score saved successfully", message.GetString());
+            var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse<object>>();
+            Assert.NotNull(apiResponse);
+            Assert.True(apiResponse.Success);
+            Assert.Equal("High score saved successfully", apiResponse.Message);
 
             // Verify the score was actually saved
             var getResponse = await _client.GetAsync($"/api/highscores?gameMode={gameMode}");
             Assert.True(getResponse.IsSuccessStatusCode);
-            var scores = await getResponse.Content.ReadFromJsonAsync<JsonElement[]>();
-            Assert.NotNull(scores);
-            Assert.Single(scores);
-            Assert.Equal("ABC", scores[0].GetProperty("playerInitials").GetString());
-            Assert.Equal(1500, scores[0].GetProperty("score").GetInt32());
+            var getApiResponse = await getResponse.Content.ReadFromJsonAsync<ApiResponse<List<HighScore>>>();
+            Assert.NotNull(getApiResponse);
+            Assert.True(getApiResponse.Success);
+            Assert.NotNull(getApiResponse.Data);
+            Assert.Single(getApiResponse.Data);
+            Assert.Equal("ABC", getApiResponse.Data[0].PlayerInitials);
+            Assert.Equal(1500, getApiResponse.Data[0].Score);
         }
 
         [Fact]
@@ -119,6 +122,10 @@ namespace PoBabyTouchGc.IntegrationTests
 
             // Assert
             Assert.Equal(System.Net.HttpStatusCode.BadRequest, response.StatusCode);
+            var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse<object>>();
+            Assert.NotNull(apiResponse);
+            Assert.False(apiResponse.Success);
+            Assert.Contains("Player initials must be exactly 3 characters", apiResponse.Message);
         }
 
         [Fact]
@@ -140,6 +147,10 @@ namespace PoBabyTouchGc.IntegrationTests
 
             // Assert
             Assert.Equal(System.Net.HttpStatusCode.BadRequest, response.StatusCode);
+            var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse<object>>();
+            Assert.NotNull(apiResponse);
+            Assert.False(apiResponse.Success);
+            Assert.Contains("Score cannot be negative", apiResponse.Message);
         }
 
         [Fact]
@@ -162,14 +173,15 @@ namespace PoBabyTouchGc.IntegrationTests
 
             // Assert
             Assert.True(response.IsSuccessStatusCode);
-            var content = await response.Content.ReadAsStringAsync();
-            var scores = JsonSerializer.Deserialize<JsonElement[]>(content);
-            Assert.NotNull(scores);
-            Assert.True(scores.Length > 0);
+            var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse<List<HighScore>>>();
+            Assert.NotNull(apiResponse);
+            Assert.True(apiResponse.Success);
+            Assert.NotNull(apiResponse.Data);
+            Assert.True(apiResponse.Data.Count > 0);
 
             // Verify our test score is there
-            Assert.Equal("XYZ", scores[0].GetProperty("playerInitials").GetString());
-            Assert.Equal(2000, scores[0].GetProperty("score").GetInt32());
+            Assert.Equal("XYZ", apiResponse.Data[0].PlayerInitials);
+            Assert.Equal(2000, apiResponse.Data[0].Score);
         }
 
         [Fact]
@@ -197,15 +209,16 @@ namespace PoBabyTouchGc.IntegrationTests
 
             // Assert
             Assert.True(response.IsSuccessStatusCode);
-            var content = await response.Content.ReadAsStringAsync();
-            var scores = JsonSerializer.Deserialize<JsonElement[]>(content);
-            Assert.NotNull(scores);
-            Assert.Equal(3, scores.Length);
+            var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse<List<HighScore>>>();
+            Assert.NotNull(apiResponse);
+            Assert.True(apiResponse.Success);
+            Assert.NotNull(apiResponse.Data);
+            Assert.Equal(3, apiResponse.Data.Count);
 
             // Verify scores are sorted correctly (highest first)
-            Assert.Equal(1400, scores[0].GetProperty("score").GetInt32());
-            Assert.Equal(1300, scores[1].GetProperty("score").GetInt32());
-            Assert.Equal(1200, scores[2].GetProperty("score").GetInt32());
+            Assert.Equal(1400, apiResponse.Data[0].Score);
+            Assert.Equal(1300, apiResponse.Data[1].Score);
+            Assert.Equal(1200, apiResponse.Data[2].Score);
         }
 
         [Fact]
@@ -228,9 +241,10 @@ namespace PoBabyTouchGc.IntegrationTests
 
             // Assert
             Assert.True(response.IsSuccessStatusCode);
-            var content = await response.Content.ReadAsStringAsync();
-            var isHighScore = JsonSerializer.Deserialize<bool>(content);
-            Assert.True(isHighScore);
+            var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
+            Assert.NotNull(apiResponse);
+            Assert.True(apiResponse.Success);
+            Assert.True(apiResponse.Data);
         }
 
         [Fact]
@@ -258,9 +272,10 @@ namespace PoBabyTouchGc.IntegrationTests
 
             // Assert
             Assert.True(response.IsSuccessStatusCode);
-            var content = await response.Content.ReadAsStringAsync();
-            var isHighScore = JsonSerializer.Deserialize<bool>(content);
-            Assert.False(isHighScore);
+            var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
+            Assert.NotNull(apiResponse);
+            Assert.True(apiResponse.Success);
+            Assert.False(apiResponse.Data);
         }
 
         [Fact]
@@ -290,9 +305,10 @@ namespace PoBabyTouchGc.IntegrationTests
 
             // Assert
             Assert.True(response.IsSuccessStatusCode);
-            var content = await response.Content.ReadAsStringAsync();
-            var rank = JsonSerializer.Deserialize<int>(content);
-            Assert.Equal(4, rank);
+            var apiResponse = await response.Content.ReadFromJsonAsync<ApiResponse<int>>();
+            Assert.NotNull(apiResponse);
+            Assert.True(apiResponse.Success);
+            Assert.Equal(4, apiResponse.Data);
         }
 
         [Fact]
