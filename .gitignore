@@ -5,9 +5,15 @@
 
 # dotenv files
 .env
+.env.local
+.env.development
+.env.production
+*.env
 
 # Azure credentials
 azure_credentials.json
+secrets.json
+appsettings.secrets.json
 
 # Azurite storage emulator files
 __azurite_db_*.json

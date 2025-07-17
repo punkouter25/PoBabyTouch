@@ -11,6 +11,15 @@ using Serilog.Sinks.ApplicationInsights.TelemetryConverters; // Add this back
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Load optional secrets file for development (if it exists)
+// This allows developers to store secrets in appsettings.secrets.json without committing them
+var secretsPath = Path.Combine(builder.Environment.ContentRootPath, "appsettings.secrets.json");
+if (File.Exists(secretsPath))
+{
+    builder.Configuration.AddJsonFile("appsettings.secrets.json", optional: true, reloadOnChange: true);
+    Log.Information("Loaded secrets from appsettings.secrets.json");
+}
+
 // Configure Serilog for verbose logging in development
 var logPath = Path.Combine(AppContext.BaseDirectory, "log.txt");
 
